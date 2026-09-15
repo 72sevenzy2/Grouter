@@ -1,14 +1,14 @@
 <h1 align="center">Xrouter.</h1>
-<h2 align="center">An http router built from scratch, ontop of the go stdlib (net/http).</h2>
+<h2 align="center">An http router built from scratch, ontop of the golang stdlib.</h2>
 
 # Features:
 
 - Route grouping for nested routes.
-- Ensures RFC-Compliant operations.
-- No external dependencies (excluding ones made for Xrouter).
-- Supports middleware aswell as route specific middleware handling.
+- Ensures RFC-Compliant route management.
+- 0 external dependencies used (excluding ones made for Xrouter).
+- Includes middleware, and also supports route specific middleware.
 - Route parameter compatibility.
-- Allocates 2+ times less than golangs standard router.
+- Allocates 2+ times less compared to golangs stdlib router.
 
 
 Its also important to note that when handling dynamic routes, the route parameters are stored in a custom Request struct map field (params) in a map, to be retrieved from a particular field in that map via r.params, example:

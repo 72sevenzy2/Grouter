@@ -5,14 +5,14 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/72sevenzy2/http-router/router"
+	"github.com/72sevenzy2/http-router/grouter"
 )
 
-func BenchmarkXrouterDynamicRoutes(t *testing.B) {
+func BenchmarkGrouterDynamicRoutes(t *testing.B) {
 	t.ReportAllocs()
-	r := router.NewRouter()
+	r := grouter.NewGrouter()
 
-	r.Get("route/path-50/:id", func(w http.ResponseWriter, r *router.Request) {
+	r.Get("route/path-50/:id", func(w http.ResponseWriter, r *grouter.Request) {
 		w.WriteHeader(http.StatusOK)
 	})
 
@@ -33,7 +33,7 @@ func BenchmarkGolangStdlibRouterDynamicRoutes(t *testing.B) {
 	r.HandleFunc("route/path-50/:id", DummyHandler)
 
 	req := httptest.NewRequest(http.MethodGet, "/route/path-50/72", nil)
-	rr :=  httptest.NewRecorder()
+	rr := httptest.NewRecorder()
 
 	t.ResetTimer()
 

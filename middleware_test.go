@@ -8,16 +8,16 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/72sevenzy2/http-router/router"
+	"github.com/72sevenzy2/http-router/grouter"
 )
 
 func TestCancelFunc(t *testing.T) {
-	b := router.NewRouter()
+	b := grouter.NewGrouter()
 
-	mw, cancel := router.Canceller()
+	mw, cancel := grouter.Canceller()
 	b.Use(mw)
 
-	b.Get("/foo", func(w http.ResponseWriter, r *router.Request) {
+	b.Get("/foo", func(w http.ResponseWriter, r *grouter.Request) {
 		select {
 		case <-r.Context().Done():
 			w.WriteHeader(http.StatusOK)
@@ -41,16 +41,16 @@ func TestCancelFunc(t *testing.T) {
 
 // auth testing
 func TestBasicAuth(t *testing.T) {
-	b := router.NewRouter()
+	b := grouter.NewGrouter()
 
 	// apply auth middleware
-	b.Use(router.BasicAuth("user1", "pass1"))
+	b.Use(grouter.BasicAuth("user1", "pass1"))
 
 	// b.Handle(http.MethodGet, "/foo1", func(w http.ResponseWriter, r *http.Request) {
 	// 	w.WriteHeader(http.StatusOK)
 	// })
 
-	b.Get("/foo1", func(w http.ResponseWriter, r *router.Request) {
+	b.Get("/foo1", func(w http.ResponseWriter, r *grouter.Request) {
 		w.WriteHeader(http.StatusOK)
 	})
 
@@ -68,11 +68,11 @@ func TestBasicAuth(t *testing.T) {
 }
 
 func TestBearerAuth(t *testing.T) {
-	b := router.NewRouter()
+	b := grouter.NewGrouter()
 
-	b.Use(router.BearerAuth("bearerauth123"))
+	b.Use(grouter.BearerAuth("bearerauth123"))
 
-	b.Get("/foo2", func(w http.ResponseWriter, r *router.Request) {
+	b.Get("/foo2", func(w http.ResponseWriter, r *grouter.Request) {
 		w.WriteHeader(http.StatusOK)
 	})
 
@@ -95,15 +95,15 @@ func TestBearerAuth(t *testing.T) {
 func TestLoggerNext(t *testing.T) {
 	called := false
 
-	next := func(w http.ResponseWriter, r *router.Request) {
+	next := func(w http.ResponseWriter, r *grouter.Request) {
 		called = true
 		w.WriteHeader(http.StatusOK)
 	}
 
-	handler := router.Logger(1024)(next)
+	handler := grouter.Logger(1024)(next)
 	req := httptest.NewRequest(http.MethodPost, "/", strings.NewReader("test"))
 	rr := httptest.NewRecorder()
-	routerReq := &router.Request{Request: req}
+	routerReq := &grouter.Request{Request: req}
 
 	handler(rr, routerReq)
 
@@ -119,7 +119,7 @@ func TestLoggerNext(t *testing.T) {
 
 // test to make sure logger preserves data (body)
 func TestLoggerBody(t *testing.T) {
-	next := func(w http.ResponseWriter, r *router.Request) {
+	next := func(w http.ResponseWriter, r *grouter.Request) {
 		body, err := io.ReadAll(r.Body)
 		if err != nil {
 			t.Fatal(err)
@@ -130,27 +130,27 @@ func TestLoggerBody(t *testing.T) {
 		}
 	}
 
-	handler := router.Logger(1024)(next)
+	handler := grouter.Logger(1024)(next)
 
 	req := httptest.NewRequest(http.MethodPost, "/", strings.NewReader("testC"))
 	rr := httptest.NewRecorder()
-	routerReq := &router.Request{Request: req}
+	routerReq := &grouter.Request{Request: req}
 
 	handler(rr, routerReq)
 }
 
 // rate limiting test
 func TestRateLimiter(t *testing.T) {
-	b := router.NewRouter()
+	b := grouter.NewGrouter()
 
-	lim := router.NewLimiter(100, 1) // 100 requests cap, 1 token refill per second
+	lim := grouter.NewLimiter(100, 1) // 100 requests cap, 1 token refill per second
 
 	b.Use(lim.RateLimiter())
 
 	var recs int
 	var mu sync.Mutex
 
-	b.Get("/rateLimTest", func(w http.ResponseWriter, r *router.Request) {
+	b.Get("/rateLimTest", func(w http.ResponseWriter, r *grouter.Request) {
 		mu.Lock()
 		recs++
 		mu.Unlock()

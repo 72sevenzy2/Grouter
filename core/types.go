@@ -29,7 +29,7 @@ type Route struct {
 }
 
 // Router struct to hold all static/dynamic routes
-type Router struct { // shared
+type Grouter struct { // shared
 	DynamicRoutes map[string][]Route // split dynamic routes by methods to reduce lookup time
 	Middlewares   []Middleware       // storing our middlewares here (type is our Middleware function type)
 	StaticRoutes  map[string]map[string]HandlerFunc

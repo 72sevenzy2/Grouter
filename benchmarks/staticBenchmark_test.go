@@ -5,14 +5,14 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/72sevenzy2/http-router/router"
+	"github.com/72sevenzy2/http-router/grouter"
 )
 
-func BenchmarkXrouterStaticRoutes(t *testing.B) {
+func BenchmarkGrouterStaticRoutes(t *testing.B) {
 	t.ReportAllocs()
-	r := router.NewRouter()
+	r := grouter.NewGrouter()
 
-	r.Get("test/path/hi", func(w http.ResponseWriter, r *router.Request) {
+	r.Get("test/path/hi", func(w http.ResponseWriter, r *grouter.Request) {
 		w.WriteHeader(http.StatusOK)
 	})
 

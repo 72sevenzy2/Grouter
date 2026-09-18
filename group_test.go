@@ -5,15 +5,15 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/72sevenzy2/http-router/router"
+	"github.com/72sevenzy2/http-router/grouter"
 )
 
 func TestStandardGrouping(t *testing.T) {
-	b := router.NewRouter()
+	b := grouter.NewGrouter()
 
 	api := b.Group("/test")
 
-	api.Handle(http.MethodGet, "/test2", func(w http.ResponseWriter, r *router.Request) {
+	api.Handle(http.MethodGet, "/test2", func(w http.ResponseWriter, r *grouter.Request) {
 		w.WriteHeader(http.StatusOK)
 	})
 
@@ -31,11 +31,11 @@ func TestStandardGrouping(t *testing.T) {
 // test with inline nested routes
 
 func TestInlineNests(t *testing.T) {
-	b := router.NewRouter()
+	b := grouter.NewGrouter()
 
 	api := b.Group("/test", "/r1", "/2")
 
-	api.Handle(http.MethodGet, "/testr", func(w http.ResponseWriter, r *router.Request) {
+	api.Handle(http.MethodGet, "/testr", func(w http.ResponseWriter, r *grouter.Request) {
 		w.WriteHeader(http.StatusOK)
 	})
 
@@ -52,17 +52,17 @@ func TestInlineNests(t *testing.T) {
 // nested grouping test
 
 func TestNestedGroups(t *testing.T) {
-	b := router.NewRouter()
+	b := grouter.NewGrouter()
 
 	api := b.Group("/parent")
 
 	v1 := api.Group("/child1")
-	v1.Use(router.Logger(0))
+	v1.Use(grouter.Logger(0))
 
 	v2 := v1.Group("/child2")
-	v2.Use(router.Recoverer())
+	v2.Use(grouter.Recoverer())
 
-	v2.Handle(http.MethodGet, "/testchild", func(w http.ResponseWriter, r *router.Request) {
+	v2.Handle(http.MethodGet, "/testchild", func(w http.ResponseWriter, r *grouter.Request) {
 		w.WriteHeader(http.StatusOK)
 	})
 

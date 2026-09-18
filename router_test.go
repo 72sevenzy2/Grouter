@@ -5,13 +5,13 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/72sevenzy2/http-router/router"
+	"github.com/72sevenzy2/http-router/grouter"
 )
 
 func TestRouter(t *testing.T) {
-	b := router.NewRouter()
+	b := grouter.NewGrouter()
 
-	b.Handle(http.MethodGet, "/test/", func(w http.ResponseWriter, r *router.Request) {
+	b.Handle(http.MethodGet, "/test/", func(w http.ResponseWriter, r *grouter.Request) {
 		w.WriteHeader(http.StatusOK)
 	})
 	rec := httptest.NewRecorder()

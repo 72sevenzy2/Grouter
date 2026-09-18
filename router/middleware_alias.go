@@ -1,4 +1,4 @@
-package router
+package grouter
 
 import (
 	"context"
@@ -15,7 +15,7 @@ func NewLimiter(limit int, ref int) *mw.Limiter {
 }
 
 // middleware chaining.
-func (r *Router) ApplyMiddlewares(h core.HandlerFunc) core.HandlerFunc {
+func (r *Grouter) ApplyMiddlewares(h core.HandlerFunc) core.HandlerFunc {
 	for i := range slices.Backward(r.Middlewares) {
 		h = r.Middlewares[i](h)
 	}

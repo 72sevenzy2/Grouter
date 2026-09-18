@@ -1,4 +1,4 @@
-package router
+package grouter
 
 import (
 	"net/http"
@@ -9,14 +9,14 @@ import (
 
 // group type (for route grouping)
 type Group struct {
-	router *Router
+	router *Grouter
 	prefix string
 	mws    []core.Middleware
 }
 
 // the router Group() method works such that when it is registered, child routes can also be registered using the parent route as it would be of type *Group, in which the child route would also inherit the parent routes middlewares.
 // parent group method
-func (r *Router) Group(p string, nests ...string) *Group {
+func (r *Grouter) Group(p string, nests ...string) *Group {
 	var updPath string
 	updPath = p
 	// make sure "/" is included in str

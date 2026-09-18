@@ -14,21 +14,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-package router
+package grouter
 
 import (
 	"net/http"
 	"slices"
 	"strings"
 
-	"github.com/72sevenzy2/http-router/core"
 	"errors"
+	"github.com/72sevenzy2/http-router/core"
 	"github.com/72sevenzy2/json-parser/response"
 )
 
 // Router struct to hold all static/dynamic routes
-type Router struct {
-	*core.Router
+type Grouter struct {
+	*core.Grouter
 }
 
 // type aliases core/types.go
@@ -36,15 +36,15 @@ type Request = core.Request
 type HandlerFunc = core.HandlerFunc
 
 // Use func to use the middewares (also appending it to the Middlewares type in router struct
-func (r *Router) Use(s core.Middleware) { // global
+func (r *Grouter) Use(s core.Middleware) { // global
 	r.Middlewares = append(r.Middlewares, s)
 }
 
 // initialise a new router.
-func NewRouter() *Router {
+func NewGrouter() *Grouter {
 	// contructing the router upon the func being called
-	return &Router{
-		Router: &core.Router{
+	return &Grouter{
+		Grouter: &core.Grouter{
 			StaticRoutes:  make(map[string]map[string]core.HandlerFunc), // initialising the map of map)
 			DynamicRoutes: make(map[string][]core.Route),
 		},
@@ -52,7 +52,7 @@ func NewRouter() *Router {
 }
 
 // initial handler, (mainly for handlers.go)
-func (r *Router) Handle(method string, path string, handler HandlerFunc, mws ...core.Middleware) {
+func (r *Grouter) Handle(method string, path string, handler HandlerFunc, mws ...core.Middleware) {
 	// RFC 9110 States that http methods are explicitly case-sensitive so we should not default it here if it is invalid.
 	if !IsValidHTTPMethod(method) {
 		panic("invalid http method.")
@@ -97,7 +97,7 @@ func (r *Router) Handle(method string, path string, handler HandlerFunc, mws ...
 var InvalidPathError = errors.New("route path and request paths dont match.")
 
 // routing logic
-func (s *Router) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+func (s *Grouter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	// making all routes normalised without a / at the end, but with root /.
 	// for example. Input: "/users//" output: "/users", input: "users/1" output: "/users/1"
 	path := strings.TrimRight(r.URL.Path, "/")

@@ -1,0 +1,5 @@
+# benchmarks - cpu profiles and memory profiles.
+benchmarks/1cpu.prof
+benchmarks/2cpu.prof
+benchmarks/1mem.prof
+benchmarks/2mem.prof

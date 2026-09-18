@@ -5,7 +5,7 @@ import (
 	"slices"
 	"time"
 
-	mw "github.com/72sevenzy2/Xrouter-middlewares"
+	mw "github.com/72sevenzy2/Grouter-middlewares"
 	"github.com/72sevenzy2/http-router/core"
 )
 

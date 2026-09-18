@@ -2,25 +2,25 @@ goos: windows
 goarch: amd64
 pkg: github.com/72sevenzy2/http-router/benchmarks
 cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
-BenchmarkXrouterDynamicRoutes-8              	 5065023	       278.9 ns/op	     136 B/op	       4 allocs/op
-BenchmarkXrouterDynamicRoutes-8              	 4368716	       229.0 ns/op	     136 B/op	       4 allocs/op
-BenchmarkXrouterDynamicRoutes-8              	 4516539	       419.4 ns/op	     136 B/op	       4 allocs/op
-BenchmarkXrouterDynamicRoutes-8              	 1442599	       785.3 ns/op	     136 B/op	       4 allocs/op
-BenchmarkXrouterDynamicRoutes-8              	 1724124	       682.2 ns/op	     136 B/op	       4 allocs/op
-BenchmarkXrouterDynamicRoutes-8              	 1787622	       677.1 ns/op	     136 B/op	       4 allocs/op
-BenchmarkXrouterDynamicRoutes-8              	 1752397	       686.1 ns/op	     136 B/op	       4 allocs/op
-BenchmarkXrouterDynamicRoutes-8              	 1629057	       731.8 ns/op	     136 B/op	       4 allocs/op
-BenchmarkXrouterDynamicRoutes-8              	 1699396	       699.7 ns/op	     136 B/op	       4 allocs/op
-BenchmarkXrouterDynamicRoutes-8              	 1704331	       705.9 ns/op	     136 B/op	       4 allocs/op
-BenchmarkGolangStdlibRouterDynamicRoutes-8   	  480530	      2717 ns/op	     229 B/op	       8 allocs/op
-BenchmarkGolangStdlibRouterDynamicRoutes-8   	  934794	      1403 ns/op	     231 B/op	       8 allocs/op
-BenchmarkGolangStdlibRouterDynamicRoutes-8   	  439658	      2596 ns/op	     198 B/op	       8 allocs/op
-BenchmarkGolangStdlibRouterDynamicRoutes-8   	  449085	      2685 ns/op	     234 B/op	       8 allocs/op
-BenchmarkGolangStdlibRouterDynamicRoutes-8   	  461508	      2723 ns/op	     232 B/op	       8 allocs/op
-BenchmarkGolangStdlibRouterDynamicRoutes-8   	  494284	      2643 ns/op	     227 B/op	       8 allocs/op
-BenchmarkGolangStdlibRouterDynamicRoutes-8   	  472081	      2706 ns/op	     231 B/op	       8 allocs/op
-BenchmarkGolangStdlibRouterDynamicRoutes-8   	  472884	      2788 ns/op	     231 B/op	       8 allocs/op
-BenchmarkGolangStdlibRouterDynamicRoutes-8   	  481964	      2606 ns/op	     229 B/op	       8 allocs/op
-BenchmarkGolangStdlibRouterDynamicRoutes-8   	  466735	      2703 ns/op	     231 B/op	       8 allocs/op
+BenchmarkGrouterDynamicRoutes-8              	 4279959	       276.8 ns/op	     136 B/op	       4 allocs/op
+BenchmarkGrouterDynamicRoutes-8              	 4335556	       256.2 ns/op	     136 B/op	       4 allocs/op
+BenchmarkGrouterDynamicRoutes-8              	 5214241	       287.1 ns/op	     136 B/op	       4 allocs/op
+BenchmarkGrouterDynamicRoutes-8              	 4964644	       244.9 ns/op	     136 B/op	       4 allocs/op
+BenchmarkGrouterDynamicRoutes-8              	 4920567	       243.5 ns/op	     136 B/op	       4 allocs/op
+BenchmarkGrouterDynamicRoutes-8              	 2710034	       481.1 ns/op	     136 B/op	       4 allocs/op
+BenchmarkGrouterDynamicRoutes-8              	 1613113	       734.7 ns/op	     136 B/op	       4 allocs/op
+BenchmarkGrouterDynamicRoutes-8              	 1672167	       722.1 ns/op	     136 B/op	       4 allocs/op
+BenchmarkGrouterDynamicRoutes-8              	 1687204	       717.3 ns/op	     136 B/op	       4 allocs/op
+BenchmarkGrouterDynamicRoutes-8              	 1635372	       727.9 ns/op	     136 B/op	       4 allocs/op
+BenchmarkGolangStdlibRouterDynamicRoutes-8   	  456783	      2842 ns/op	     233 B/op	       8 allocs/op
+BenchmarkGolangStdlibRouterDynamicRoutes-8   	  475068	      2751 ns/op	     230 B/op	       8 allocs/op
+BenchmarkGolangStdlibRouterDynamicRoutes-8   	  483651	      2851 ns/op	     229 B/op	       8 allocs/op
+BenchmarkGolangStdlibRouterDynamicRoutes-8   	  478692	      2660 ns/op	     230 B/op	       8 allocs/op
+BenchmarkGolangStdlibRouterDynamicRoutes-8   	  475254	      2659 ns/op	     230 B/op	       8 allocs/op
+BenchmarkGolangStdlibRouterDynamicRoutes-8   	  408910	      2663 ns/op	     201 B/op	       8 allocs/op
+BenchmarkGolangStdlibRouterDynamicRoutes-8   	  434532	      2631 ns/op	     198 B/op	       8 allocs/op
+BenchmarkGolangStdlibRouterDynamicRoutes-8   	  459594	      2766 ns/op	     233 B/op	       8 allocs/op
+BenchmarkGolangStdlibRouterDynamicRoutes-8   	  429147	      2731 ns/op	     199 B/op	       8 allocs/op
+BenchmarkGolangStdlibRouterDynamicRoutes-8   	  477590	      2651 ns/op	     230 B/op	       8 allocs/op
 PASS
-ok  	github.com/72sevenzy2/http-router/benchmarks	26.415s
+ok  	github.com/72sevenzy2/http-router/benchmarks	26.050s

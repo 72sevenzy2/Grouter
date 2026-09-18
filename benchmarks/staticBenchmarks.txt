@@ -2,25 +2,25 @@ goos: windows
 goarch: amd64
 pkg: github.com/72sevenzy2/http-router/benchmarks
 cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
-BenchmarkXrouterStaticRoutes-8        	 1335540	       791.1 ns/op	     216 B/op	       4 allocs/op
-BenchmarkXrouterStaticRoutes-8        	 1000000	      1167 ns/op	     250 B/op	       4 allocs/op
-BenchmarkXrouterStaticRoutes-8        	  554895	      2146 ns/op	     237 B/op	       4 allocs/op
-BenchmarkXrouterStaticRoutes-8        	  581222	      2198 ns/op	     231 B/op	       4 allocs/op
-BenchmarkXrouterStaticRoutes-8        	  527038	      2171 ns/op	     243 B/op	       4 allocs/op
-BenchmarkXrouterStaticRoutes-8        	  550556	      2166 ns/op	     238 B/op	       4 allocs/op
-BenchmarkXrouterStaticRoutes-8        	  588379	      2174 ns/op	     230 B/op	       4 allocs/op
-BenchmarkXrouterStaticRoutes-8        	  565783	      2192 ns/op	     234 B/op	       4 allocs/op
-BenchmarkXrouterStaticRoutes-8        	  512629	      2118 ns/op	     246 B/op	       4 allocs/op
-BenchmarkXrouterStaticRoutes-8        	  573060	      2148 ns/op	     233 B/op	       4 allocs/op
-BenchmarkGolangStdlibStaticRoutes-8   	  504890	      2606 ns/op	     210 B/op	       8 allocs/op
-BenchmarkGolangStdlibStaticRoutes-8   	  501088	      2617 ns/op	     211 B/op	       8 allocs/op
-BenchmarkGolangStdlibStaticRoutes-8   	  503401	      2467 ns/op	     210 B/op	       8 allocs/op
-BenchmarkGolangStdlibStaticRoutes-8   	  426763	      2620 ns/op	     183 B/op	       8 allocs/op
-BenchmarkGolangStdlibStaticRoutes-8   	  406947	      3036 ns/op	     185 B/op	       8 allocs/op
-BenchmarkGolangStdlibStaticRoutes-8   	  355542	      2991 ns/op	     191 B/op	       8 allocs/op
-BenchmarkGolangStdlibStaticRoutes-8   	  491788	      2756 ns/op	     212 B/op	       8 allocs/op
-BenchmarkGolangStdlibStaticRoutes-8   	  476623	      2510 ns/op	     214 B/op	       8 allocs/op
-BenchmarkGolangStdlibStaticRoutes-8   	  485995	      2489 ns/op	     213 B/op	       8 allocs/op
-BenchmarkGolangStdlibStaticRoutes-8   	  507961	      2437 ns/op	     210 B/op	       8 allocs/op
+BenchmarkGrouterStaticRoutes-8        	 1458025	       833.0 ns/op	     300 B/op	       4 allocs/op
+BenchmarkGrouterStaticRoutes-8        	 1515729	       757.3 ns/op	     293 B/op	       4 allocs/op
+BenchmarkGrouterStaticRoutes-8        	 1230286	      1166 ns/op	     225 B/op	       4 allocs/op
+BenchmarkGrouterStaticRoutes-8        	 1000000	      1719 ns/op	     250 B/op	       4 allocs/op
+BenchmarkGrouterStaticRoutes-8        	  542080	      2227 ns/op	     239 B/op	       4 allocs/op
+BenchmarkGrouterStaticRoutes-8        	  575257	      2270 ns/op	     232 B/op	       4 allocs/op
+BenchmarkGrouterStaticRoutes-8        	  535872	      2217 ns/op	     241 B/op	       4 allocs/op
+BenchmarkGrouterStaticRoutes-8        	  529078	      2172 ns/op	     242 B/op	       4 allocs/op
+BenchmarkGrouterStaticRoutes-8        	  493770	      2258 ns/op	     252 B/op	       4 allocs/op
+BenchmarkGrouterStaticRoutes-8        	  507903	      2231 ns/op	     248 B/op	       4 allocs/op
+BenchmarkGolangStdlibStaticRoutes-8   	  673026	      2683 ns/op	     193 B/op	       8 allocs/op
+BenchmarkGolangStdlibStaticRoutes-8   	  395635	      2673 ns/op	     186 B/op	       8 allocs/op
+BenchmarkGolangStdlibStaticRoutes-8   	  435595	      2570 ns/op	     182 B/op	       8 allocs/op
+BenchmarkGolangStdlibStaticRoutes-8   	  486668	      3089 ns/op	     213 B/op	       8 allocs/op
+BenchmarkGolangStdlibStaticRoutes-8   	  458541	      2614 ns/op	     217 B/op	       8 allocs/op
+BenchmarkGolangStdlibStaticRoutes-8   	  477658	      2587 ns/op	     214 B/op	       8 allocs/op
+BenchmarkGolangStdlibStaticRoutes-8   	  488950	      2552 ns/op	     212 B/op	       8 allocs/op
+BenchmarkGolangStdlibStaticRoutes-8   	  480010	      2532 ns/op	     213 B/op	       8 allocs/op
+BenchmarkGolangStdlibStaticRoutes-8   	  498249	      2591 ns/op	     211 B/op	       8 allocs/op
+BenchmarkGolangStdlibStaticRoutes-8   	  499412	      2571 ns/op	     211 B/op	       8 allocs/op
 PASS
-ok  	github.com/72sevenzy2/http-router/benchmarks	26.949s
+ok  	github.com/72sevenzy2/http-router/benchmarks	25.976s

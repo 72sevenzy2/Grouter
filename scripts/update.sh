@@ -9,7 +9,7 @@ run() {
     fi
 }
 
-run go get -u github.com/72sevenzy2/Xrouter-middlewares@latest
+run go get -u github.com/72sevenzy2/Grouter-middlewares@latest
 run go mod tidy
 echo "successfully updated middlewares."
 

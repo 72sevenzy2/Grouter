@@ -23,7 +23,7 @@ import (
 
 	"errors"
 	"github.com/72sevenzy2/http-router/core"
-	"github.com/72sevenzy2/json-parser/response"
+	"github.com/72sevenzy2/json-parser"
 )
 
 // Router struct to hold all static/dynamic routes

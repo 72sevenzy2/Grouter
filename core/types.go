@@ -11,11 +11,11 @@ type Param struct {
 	Key   string
 	Value string
 }
-type Params []*Param
+type Params []Param
 type Request struct { // shared
 	*http.Request
-	ContextReq *http.Request     // for timeout mw (WithContext() usage)
-	Params     Params // holding route parameters
+	ContextReq *http.Request // for timeout mw (WithContext() usage)
+	Params     Params        // holding route parameters
 }
 
 type HandlerFunc func(http.ResponseWriter, *Request) // shared

@@ -78,7 +78,7 @@ func match(routeP []string, reqP string) (core.Params, error) {
 			return nil, InvalidPathError
 		}
 		if len(rp) > 0 && rp[0] == ':' {
-			params = append(params, &core.Param{
+			params = append(params, core.Param{
 				Key:   rp[1:],
 				Value: reqp,
 			})

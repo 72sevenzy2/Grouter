@@ -8,8 +8,7 @@ import (
 	"github.com/72sevenzy2/http-router/grouter"
 )
 
-func BenchmarkGrouterDynamicRoutes(t *testing.B) {
-	t.ReportAllocs()
+func BenchmarkGrouterDynamicRoutes(b *testing.B) {
 	r := grouter.NewGrouter()
 
 	r.Get("route/path-50/:id", func(w http.ResponseWriter, r *grouter.Request) {
@@ -17,28 +16,37 @@ func BenchmarkGrouterDynamicRoutes(t *testing.B) {
 	})
 
 	req := httptest.NewRequest(http.MethodGet, "/route/path-50/72", nil)
-	rr := httptest.NewRecorder()
-	t.ResetTimer()
+	b.ResetTimer()
+	b.ReportAllocs()
 
-	for t.Loop() {
+	for b.Loop() {
+		rr := httptest.NewRecorder()
 		r.ServeHTTP(rr, req)
+
+		if rr.Code != http.StatusOK {
+			b.Fatalf("expected status %d, got %d", http.StatusOK, rr.Code)
+		}
 	}
 }
 
 // comparing to go's stdlib mux
-func BenchmarkGolangStdlibRouterDynamicRoutes(t *testing.B) {
-	t.ReportAllocs()
+func BenchmarkGolangStdlibRouterDynamicRoutes(b *testing.B) {
 	r := http.NewServeMux()
 
-	r.HandleFunc("route/path-50/:id", DummyHandler)
+	r.HandleFunc("GET /route/path-50/{id}", DummyHandler)
 
 	req := httptest.NewRequest(http.MethodGet, "/route/path-50/72", nil)
-	rr := httptest.NewRecorder()
 
-	t.ResetTimer()
+	b.ResetTimer()
+	b.ReportAllocs()
 
-	for t.Loop() {
+	for b.Loop() {
+		rr := httptest.NewRecorder()
 		r.ServeHTTP(rr, req)
+
+		if rr.Code != http.StatusOK {
+			b.Fatalf("expected status %d, got %d", http.StatusOK, rr.Code)
+		}
 	}
 }
 

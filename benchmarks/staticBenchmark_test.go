@@ -8,8 +8,7 @@ import (
 	"github.com/72sevenzy2/http-router/grouter"
 )
 
-func BenchmarkGrouterStaticRoutes(t *testing.B) {
-	t.ReportAllocs()
+func BenchmarkGrouterStaticRoutes(b *testing.B) {
 	r := grouter.NewGrouter()
 
 	r.Get("test/path/hi", func(w http.ResponseWriter, r *grouter.Request) {
@@ -17,25 +16,34 @@ func BenchmarkGrouterStaticRoutes(t *testing.B) {
 	})
 
 	req := httptest.NewRequest(http.MethodGet, "/test/path/hi", nil)
-	rr := httptest.NewRecorder()
 
-	t.ResetTimer()
+	b.ResetTimer()
+	b.ReportAllocs()
 
-	for t.Loop() {
+	for b.Loop() {
+		rr := httptest.NewRecorder()
 		r.ServeHTTP(rr, req)
+
+		if rr.Code != http.StatusOK {
+			b.Fatalf("expected status %d, got %d", http.StatusOK, rr.Code)
+		}
 	}
 }
 
-func BenchmarkGolangStdlibStaticRoutes(t *testing.B) {
-	t.ReportAllocs()
+func BenchmarkGolangStdlibStaticRoutes(b *testing.B) {
 	r := http.NewServeMux()
 
-	r.HandleFunc("test/path/hi", DummyHandler)
+	r.HandleFunc("GET /test/path/hi", DummyHandler)
 	req := httptest.NewRequest(http.MethodGet, "/test/path/hi", nil)
-	rr := httptest.NewRecorder()
 
-	t.ResetTimer()
-	for t.Loop() {
+	b.ResetTimer()
+	b.ReportAllocs()
+
+	for b.Loop() {
+		rr := httptest.NewRecorder()
 		r.ServeHTTP(rr, req)
+		if rr.Code != http.StatusOK {
+			b.Fatalf("expected status %d, got %d", http.StatusOK, rr.Code)
+		}
 	}
 }

@@ -122,15 +122,12 @@ func (s *Grouter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	// attempt dynamic routes
-	parts := splitPath(path)
-
 	// preallocated storedParams for storing parameters, dependent on how many r.URL parts are present on splitPath().
 	var storedParams core.Params
 	var storedParamsErr error
 
 	for _, route := range s.DynamicRoutes[r.Method] { // loop over dynamic routes which are grouped by methods
-		storedParams, storedParamsErr = match(route.Parts, parts)
+		storedParams, storedParamsErr = match(route.Parts, path)
 		if storedParamsErr != nil {
 			// request path does not match route path.
 			response.JSON(w, http.StatusBadRequest, nil, InvalidPathError.Error())

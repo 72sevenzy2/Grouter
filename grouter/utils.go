@@ -12,6 +12,33 @@ func isDynamic(path string) bool {
 	return strings.Contains(path, ":") // strings.Contains() returns a boolean
 }
 
+type pathIter struct {
+	path string
+	pos  int
+}
+
+func NewPathIter(p string) *pathIter {
+	return &pathIter{
+		path: strings.Trim(p, "/"),
+		pos:  0,
+	}
+}
+
+func (i *pathIter) next() (string, bool) {
+	if i.pos >= len(i.path) {
+		return "", false
+	}
+	s := i.pos
+	for i.pos < len(i.path) && i.path[i.pos] != '/' {
+		i.pos++
+	}
+	routeSegmt := i.path[s:i.pos]
+	if i.pos < len(i.path) {
+		i.pos++
+	}
+	return routeSegmt, true
+}
+
 // func to split route path
 func splitPath(path string) []string {
 	// manual string indexing to avoid strings.genSplit overhead.
@@ -30,7 +57,7 @@ func splitPath(path string) []string {
 	// preallocate according to n (number of parts in the request)
 	parts := make([]string, 0, n)
 	start := 0
-	for v := 0; v < len(path); v++{
+	for v := 0; v < len(path); v++ {
 		if path[v] == '/' {
 			parts = append(parts, path[start:v])
 			start = v + 1 // update start position after each append
@@ -42,39 +69,31 @@ func splitPath(path string) []string {
 }
 
 // func to match request parts and route parts
-func match(routeP []string, reqP []string) (core.Params, error) {
-
-	// verify if incoming requests path and if registered route match.
-	if len(routeP) != len(reqP) {
-		return nil, InvalidPathError
-	}
-
-	// preallocated map to store params of size len(route.Parts).
-	// as number of params would vary on number of params in routeP, though it is safe to keep allocated size of len(routeP) for flexibility depending on number of parameters in a single route.
-	//params := make(map[string]string, len(routeP))
-
+func match(routeP []string, reqP string) (core.Params, error) {
+	iter := NewPathIter(reqP)
 	var params core.Params
-
-	for v := range routeP { // can use both reqP and routeP to loop over
-		rp := routeP[v]
-		reqp := reqP[v]
-
-		if len(rp) > 0 && rp[0] == ':' { // validate whether route part contains an : (indicating that it is dynamic)
-			//params[key] = reqp // store dynamic route indicator as param to reqp value.
-			params = append(params, &core.Param{Key: rp[1:], Value: reqp})
-			continue // continue to next loop iteration
+	for _, rp := range routeP { // can use both reqP and routeP to loop over
+		reqp, ok := iter.next()
+		if !ok {
+			return nil, InvalidPathError
+		}
+		if len(rp) > 0 && rp[0] == ':' {
+			params = append(params, &core.Param{
+				Key:   rp[1:],
+				Value: reqp,
+			})
+			continue
 		}
 
 		// verifies whether request path matches registered route path
-		// for RFC-3986 compliancy, it states that query, path components must be treated case-sensitive, so we dont normalise them here.
+		// RFC-3986 states that path components must be treated case-sensitive, so we dont normalise them here.
 		if rp != reqp {
 			return nil, InvalidPathError
 		}
 	}
-
-	//
-
-	// everything matched
+	if _, ok := iter.next(); ok {
+		return nil, InvalidPathError
+	}
 	return params, nil
 }
 

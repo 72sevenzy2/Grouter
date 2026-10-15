@@ -4,11 +4,11 @@
 # Features:
 
 - Route grouping for nested routes.
-- Ensures RFC-Compliant route management.
+- RFC-Compliant route management.
 - 0 external dependencies used (excluding ones made for Grouter).
 - Includes middleware, and also supports route specific middleware.
 - Route parameter compatibility.
-- Allocates 2+ times less compared to golangs stdlib router (see benchmarks/).
+- 2+ times faster compared to golangs stdlib router (see benchmarks/results).
 
 
 Its also important to note that when handling dynamic routes, the route parameter values are stored in a custom Request{} map (which is 'params'), to be retrieved via the Request{} map field, example:

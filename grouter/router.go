@@ -65,6 +65,10 @@ func (r *Grouter) Handle(method string, path string, handler HandlerFunc, mws ..
 		}
 	}
 	normalisedpath := strings.TrimRight(path, "/") // normalise of any trailing slashes.
+	if !strings.HasPrefix(normalisedpath, "/") {
+		normalisedpath = "/" + normalisedpath
+	}
+
 	if normalisedpath == "" {
 		normalisedpath = "/"
 	}
@@ -95,6 +99,7 @@ func (r *Grouter) Handle(method string, path string, handler HandlerFunc, mws ..
 }
 
 var InvalidPathError = errors.New("route path and request paths dont match.")
+var InvalidMethodError = errors.New("invalid method.")
 
 // routing logic
 func (s *Grouter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
@@ -113,7 +118,7 @@ func (s *Grouter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			Handler = handler
 		} else {
 			// otherwise return err if method is invalid
-			response.JSON(w, http.StatusInternalServerError, nil, "invalid method")
+			response.JSON(w, http.StatusInternalServerError, nil, InvalidMethodError.Error())
 			return
 		}
 	}

@@ -1,0 +1,26 @@
+goos: windows
+goarch: amd64
+pkg: github.com/72sevenzy2/http-router/benchmarks
+cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+BenchmarkGrouterStaticRoutes-8        	 2273820	       598.9 ns/op	     304 B/op	       6 allocs/op
+BenchmarkGrouterStaticRoutes-8        	 1991101	       802.8 ns/op	     304 B/op	       6 allocs/op
+BenchmarkGrouterStaticRoutes-8        	 1000000	      1051 ns/op	     304 B/op	       6 allocs/op
+BenchmarkGrouterStaticRoutes-8        	 1106377	      1080 ns/op	     304 B/op	       6 allocs/op
+BenchmarkGrouterStaticRoutes-8        	 1000000	      1014 ns/op	     304 B/op	       6 allocs/op
+BenchmarkGrouterStaticRoutes-8        	 1000000	      1187 ns/op	     304 B/op	       6 allocs/op
+BenchmarkGrouterStaticRoutes-8        	  847152	      1458 ns/op	     304 B/op	       6 allocs/op
+BenchmarkGrouterStaticRoutes-8        	 1000000	      1327 ns/op	     304 B/op	       6 allocs/op
+BenchmarkGrouterStaticRoutes-8        	  844802	      1368 ns/op	     304 B/op	       6 allocs/op
+BenchmarkGrouterStaticRoutes-8        	  858498	      1268 ns/op	     304 B/op	       6 allocs/op
+BenchmarkGolangStdlibStaticRoutes-8   	  877390	      1447 ns/op	     208 B/op	       4 allocs/op
+BenchmarkGolangStdlibStaticRoutes-8   	  983702	      1611 ns/op	     208 B/op	       4 allocs/op
+BenchmarkGolangStdlibStaticRoutes-8   	  928712	      1101 ns/op	     208 B/op	       4 allocs/op
+BenchmarkGolangStdlibStaticRoutes-8   	  964528	      1193 ns/op	     208 B/op	       4 allocs/op
+BenchmarkGolangStdlibStaticRoutes-8   	  903158	      1202 ns/op	     208 B/op	       4 allocs/op
+BenchmarkGolangStdlibStaticRoutes-8   	 1000000	      1147 ns/op	     208 B/op	       4 allocs/op
+BenchmarkGolangStdlibStaticRoutes-8   	  978488	      1188 ns/op	     208 B/op	       4 allocs/op
+BenchmarkGolangStdlibStaticRoutes-8   	 1267363	      1056 ns/op	     208 B/op	       4 allocs/op
+BenchmarkGolangStdlibStaticRoutes-8   	 1000000	      1010 ns/op	     208 B/op	       4 allocs/op
+BenchmarkGolangStdlibStaticRoutes-8   	 1000000	      1126 ns/op	     208 B/op	       4 allocs/op
+PASS
+ok  	github.com/72sevenzy2/http-router/benchmarks	27.293s

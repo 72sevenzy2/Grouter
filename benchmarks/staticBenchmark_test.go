@@ -21,7 +21,10 @@ func BenchmarkGrouterStaticRoutes(b *testing.B) {
 	b.ReportAllocs()
 
 	for b.Loop() {
-		rr := httptest.NewRecorder()
+		rr := &BenchmarkRR{
+			Headers: make(http.Header),
+			Code:    http.StatusOK,
+		}
 		r.ServeHTTP(rr, req)
 
 		if rr.Code != http.StatusOK {
@@ -40,7 +43,10 @@ func BenchmarkGolangStdlibStaticRoutes(b *testing.B) {
 	b.ReportAllocs()
 
 	for b.Loop() {
-		rr := httptest.NewRecorder()
+		rr := &BenchmarkRR{
+			Headers: make(http.Header),
+			Code:    http.StatusOK,
+		}
 		r.ServeHTTP(rr, req)
 		if rr.Code != http.StatusOK {
 			b.Fatalf("expected status %d, got %d", http.StatusOK, rr.Code)

@@ -20,7 +20,10 @@ func BenchmarkGrouterDynamicRoutes(b *testing.B) {
 	b.ReportAllocs()
 
 	for b.Loop() {
-		rr := httptest.NewRecorder()
+		rr := &BenchmarkRR{
+			Headers: make(http.Header),
+			Code:    http.StatusOK,
+		}
 		r.ServeHTTP(rr, req)
 
 		if rr.Code != http.StatusOK {
@@ -41,7 +44,10 @@ func BenchmarkGolangStdlibRouterDynamicRoutes(b *testing.B) {
 	b.ReportAllocs()
 
 	for b.Loop() {
-		rr := httptest.NewRecorder()
+		rr := &BenchmarkRR{
+			Headers: make(http.Header),
+			Code:    http.StatusOK,
+		}
 		r.ServeHTTP(rr, req)
 
 		if rr.Code != http.StatusOK {
@@ -53,4 +59,25 @@ func BenchmarkGolangStdlibRouterDynamicRoutes(b *testing.B) {
 // shared with staticBenchmark_test.go
 func DummyHandler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
+}
+
+// reusable response recorder (purely to avoid allocations for benchmarking purposes)
+// shared with staticBenchmark_test.go
+
+type BenchmarkRR struct {
+	Headers http.Header
+	Code    int
+}
+
+// Header(), WriteHeader(), and Write() implement the ResponseWriter interface.
+func (w *BenchmarkRR) Header() http.Header {
+	return w.Headers
+}
+
+func (w *BenchmarkRR) WriteHeader(status int) {
+	w.Code = status
+}
+
+func (w *BenchmarkRR) Write(p []byte) (int, error) {
+	return len(p), nil
 }

@@ -1,0 +1,26 @@
+goos: windows
+goarch: amd64
+pkg: github.com/72sevenzy2/http-router/benchmarks
+cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+BenchmarkGrouterStaticRoutes404-8        	 1201040	      1023 ns/op	     484 B/op	       6 allocs/op
+BenchmarkGrouterStaticRoutes404-8        	 1000000	      1035 ns/op	     484 B/op	       6 allocs/op
+BenchmarkGrouterStaticRoutes404-8        	 1000000	      2781 ns/op	     484 B/op	       6 allocs/op
+BenchmarkGrouterStaticRoutes404-8        	  671121	      2078 ns/op	     484 B/op	       6 allocs/op
+BenchmarkGrouterStaticRoutes404-8        	 1000000	      2187 ns/op	     484 B/op	       6 allocs/op
+BenchmarkGrouterStaticRoutes404-8        	  483369	      2155 ns/op	     484 B/op	       6 allocs/op
+BenchmarkGrouterStaticRoutes404-8        	 1000000	      2198 ns/op	     484 B/op	       6 allocs/op
+BenchmarkGrouterStaticRoutes404-8        	  483429	      2113 ns/op	     484 B/op	       6 allocs/op
+BenchmarkGrouterStaticRoutes404-8        	 1000000	      2372 ns/op	     484 B/op	       6 allocs/op
+BenchmarkGrouterStaticRoutes404-8        	  457878	      2359 ns/op	     484 B/op	       6 allocs/op
+BenchmarkGolangStdlibStaticRoutes404-8   	  267673	      4641 ns/op	     704 B/op	      19 allocs/op
+BenchmarkGolangStdlibStaticRoutes404-8   	  220069	      4738 ns/op	     704 B/op	      19 allocs/op
+BenchmarkGolangStdlibStaticRoutes404-8   	  306158	      4022 ns/op	     704 B/op	      19 allocs/op
+BenchmarkGolangStdlibStaticRoutes404-8   	  221798	      5512 ns/op	     704 B/op	      19 allocs/op
+BenchmarkGolangStdlibStaticRoutes404-8   	  222859	      5154 ns/op	     704 B/op	      19 allocs/op
+BenchmarkGolangStdlibStaticRoutes404-8   	  223184	      4706 ns/op	     704 B/op	      19 allocs/op
+BenchmarkGolangStdlibStaticRoutes404-8   	  262012	      4448 ns/op	     704 B/op	      19 allocs/op
+BenchmarkGolangStdlibStaticRoutes404-8   	  201352	      5579 ns/op	     704 B/op	      19 allocs/op
+BenchmarkGolangStdlibStaticRoutes404-8   	  419084	      4304 ns/op	     704 B/op	      19 allocs/op
+BenchmarkGolangStdlibStaticRoutes404-8   	  227919	      4654 ns/op	     704 B/op	      19 allocs/op
+PASS
+ok  	github.com/72sevenzy2/http-router/benchmarks	31.407s

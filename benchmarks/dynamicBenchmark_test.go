@@ -56,20 +56,18 @@ func BenchmarkGolangStdlibRouterDynamicRoutes(b *testing.B) {
 	}
 }
 
-// shared with staticBenchmark_test.go
+// shared DummyHandler.
 func DummyHandler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 }
 
-// reusable response recorder (purely to avoid allocations for benchmarking purposes)
-// shared with staticBenchmark_test.go
-
+// shared reusable response recorder (to avoid allocations upon creating a new httptest.NewRecorder() for every request.)
 type BenchmarkRR struct {
 	Headers http.Header
 	Code    int
 }
 
-// Header(), WriteHeader(), and Write() implement the ResponseWriter interface.
+// Header(), WriteHeader(), and Write() implements the http.ResponseWriter interface.
 func (w *BenchmarkRR) Header() http.Header {
 	return w.Headers
 }

@@ -110,7 +110,7 @@ func (s *Grouter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		path = "/" // default to / if empty
 	}
 
-	// Handler acts as the final handler after static/dynamic determining loops.
+	// Handler acts as the final handler after static/dynamic route determining loops.
 	var Handler core.HandlerFunc
 	// attempt static routes
 	if methods, ok := s.StaticRoutes[path]; ok { // validate if route path exists
@@ -118,7 +118,7 @@ func (s *Grouter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			Handler = handler
 		} else {
 			// otherwise return err if method is invalid
-			response.JSON(w, http.StatusInternalServerError, nil, InvalidMethodError.Error())
+			response.JSON(w, http.StatusMethodNotAllowed, nil, InvalidMethodError.Error())
 			return
 		}
 	}
@@ -130,7 +130,7 @@ func (s *Grouter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		storedParams, storedParamsErr = match(route.Parts, path)
 		if storedParamsErr != nil {
 			// request path does not match route path.
-			response.JSON(w, http.StatusBadRequest, nil, InvalidPathError.Error())
+			response.JSON(w, http.StatusNotFound, nil, InvalidPathError.Error())
 			return
 		}
 		if storedParams == nil {
@@ -140,7 +140,7 @@ func (s *Grouter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if Handler == nil {
-		response.JSON(w, http.StatusBadRequest, nil, http.StatusText(http.StatusNotFound))
+		response.JSON(w, http.StatusNotFound, nil, http.StatusText(http.StatusNotFound))
 		return
 	}
 

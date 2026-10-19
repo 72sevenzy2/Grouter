@@ -8,10 +8,22 @@
 - 0 external dependencies used (excluding ones made for Grouter).
 - Includes middleware, and also supports route specific middleware.
 - Route parameter compatibility.
-- 2+ times faster compared to golangs stdlib router (see benchmarks/results).
+- proven to be faster compared to golangs stdlib router (see benchmarks/results).
 
+  <h2>benchmark specifications:</h2>
+  
+	```
+	CPU: cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+ 	OS: windows
+ 	Arch: amd64
+ 	Frequency: 10 reps for both grouter and mux.
+	```
 
-Its also important to note that when handling dynamic routes, the route parameter values are stored in a custom Request{} map (which is 'params'), to be retrieved via the Request{} map field, example:
+ <h1 align="center">Getting started</h1>
+<br>
+<h2>pre-requisites:</h2>
+<h4>when writing handlers, do make sure your using the custom Request struct instead of http.Request, which is grouter.Request</h4>
+<h4>When handling dynamic routes, the route parameter values are stored in alongside the grouter.Request struct ('params' map), that cam be retrieved like so:</h4>
 
 ```
  package main
@@ -42,7 +54,6 @@ func main() {
 
 ```
 <br>
-<h4 align="center">note: when writing handlers, do make sure your using the custom Request struct instead of http.Request, which is grouter.Request</h4>
 
 <h1 align="center">General usage:</h1>
 
@@ -70,7 +81,7 @@ func main() {
 }
 
 ```
-<h2 align="center">And for route grouping:</h2>
+<h2 align="center">Grouping routes:</h2>
 
 ```
 package main
@@ -112,7 +123,7 @@ func main() {
 ```
 
 <br>
-<h2 align="center" style.Background="gray">Usage with all the middleware(s):</h2>
+<h2 align="center" style.Background="gray">Middleware(s) usage:</h2>
 
 ```
 
@@ -150,11 +161,11 @@ func main() {
 }
 
 ```
-^ you can limit how much the logging middleware reads from the request body, the default size set is 1kb, but you can change it via passing in an int in the Logger() func, an example: "r.Use(grouter.Logger(1024 * 2)" (limit to 2 kilobytes.) but make sure the size your going to configure is of appropriate type (uint32).
+^ Request body read from the logging middleware can be capped, the default size being 1KiB, but can be configured via passing in an limit in grouter.Logger(..), like such: "r.Use(grouter.Logger(1024 * 2)" (2 KiB cap), though be sure the limit passed in is of appropriate type (uint32).
 <br>
 
 <br>
-<h2 align="center">Example usage with route-specific middleware:</h2>
+<h2 align="center">Route-specific middleware:</h2>
 
 ```
 package main
@@ -179,26 +190,4 @@ func main() {
 	}
 }
 
-```
-<br>
-
-whilst using the timeout middleware, in your handler you must exit when the cancellation deadline ends as such:
-
-```
-package handler
-
-import (
-	"github.com/72sevenzy2/Grouter/grouter"
-)
-
-
-func SlowHiHandler(w http.ResponseWriter, r *grouter.Request) {
-	select {
-	case <-time.After(5 * time.Second): // The duration you set in the Timeout() mw or less.
-		// continue with task before cancellation
-
-	case <-r.Context().Done():
-		return // cancel
-	}
-}
 ```

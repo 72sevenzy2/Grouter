@@ -1,0 +1,26 @@
+goos: windows
+goarch: amd64
+pkg: github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks
+cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+BenchmarkLoggerMiddleware-8   	  185245	      5955 ns/op	     528 B/op	      18 allocs/op
+BenchmarkLoggerMiddleware-8   	  268935	      6445 ns/op	     528 B/op	      18 allocs/op
+BenchmarkLoggerMiddleware-8   	  266774	     15027 ns/op	     528 B/op	      18 allocs/op
+BenchmarkLoggerMiddleware-8   	   79251	     16276 ns/op	     528 B/op	      18 allocs/op
+BenchmarkLoggerMiddleware-8   	  115830	      8783 ns/op	     528 B/op	      18 allocs/op
+BenchmarkLoggerMiddleware-8   	   70502	     16362 ns/op	     529 B/op	      18 allocs/op
+BenchmarkLoggerMiddleware-8   	   72226	     16026 ns/op	     529 B/op	      18 allocs/op
+BenchmarkLoggerMiddleware-8   	  233474	     13611 ns/op	     528 B/op	      18 allocs/op
+BenchmarkLoggerMiddleware-8   	   72013	     15216 ns/op	     528 B/op	      18 allocs/op
+BenchmarkLoggerMiddleware-8   	  152541	     14205 ns/op	     528 B/op	      18 allocs/op
+BenchmarkLoggerMiddleware-8   	   77390	     14719 ns/op	     528 B/op	      18 allocs/op
+BenchmarkLoggerMiddleware-8   	  254262	     11414 ns/op	     528 B/op	      18 allocs/op
+BenchmarkLoggerMiddleware-8   	  246872	     14552 ns/op	     528 B/op	      18 allocs/op
+BenchmarkLoggerMiddleware-8   	   54621	     21922 ns/op	     529 B/op	      18 allocs/op
+BenchmarkLoggerMiddleware-8   	   75517	     16356 ns/op	     528 B/op	      18 allocs/op
+BenchmarkLoggerMiddleware-8   	   77378	     15648 ns/op	     528 B/op	      18 allocs/op
+BenchmarkLoggerMiddleware-8   	   76864	     18146 ns/op	     528 B/op	      18 allocs/op
+BenchmarkLoggerMiddleware-8   	   73138	     17491 ns/op	     528 B/op	      18 allocs/op
+BenchmarkLoggerMiddleware-8   	   79896	     17430 ns/op	     528 B/op	      18 allocs/op
+BenchmarkLoggerMiddleware-8   	   68610	     16728 ns/op	     528 B/op	      18 allocs/op
+PASS
+ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks	34.743s

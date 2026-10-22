@@ -1,0 +1,26 @@
+goos: windows
+goarch: amd64
+pkg: github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks
+cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+BenchmarkBearerAuthMiddleware-8   	 3745126	       289.6 ns/op	     144 B/op	       4 allocs/op
+BenchmarkBearerAuthMiddleware-8   	 2842968	       365.8 ns/op	     144 B/op	       4 allocs/op
+BenchmarkBearerAuthMiddleware-8   	 3029725	       448.6 ns/op	     144 B/op	       4 allocs/op
+BenchmarkBearerAuthMiddleware-8   	 1654473	       688.4 ns/op	     144 B/op	       4 allocs/op
+BenchmarkBearerAuthMiddleware-8   	 2216560	       693.2 ns/op	     144 B/op	       4 allocs/op
+BenchmarkBearerAuthMiddleware-8   	 1532275	       683.5 ns/op	     144 B/op	       4 allocs/op
+BenchmarkBearerAuthMiddleware-8   	 1630177	       728.2 ns/op	     144 B/op	       4 allocs/op
+BenchmarkBearerAuthMiddleware-8   	 1712739	       738.9 ns/op	     144 B/op	       4 allocs/op
+BenchmarkBearerAuthMiddleware-8   	 1846030	       724.2 ns/op	     144 B/op	       4 allocs/op
+BenchmarkBearerAuthMiddleware-8   	 2151339	       701.4 ns/op	     144 B/op	       4 allocs/op
+BenchmarkBearerAuthMiddleware-8   	 1971098	       644.3 ns/op	     144 B/op	       4 allocs/op
+BenchmarkBearerAuthMiddleware-8   	 1458108	       823.5 ns/op	     144 B/op	       4 allocs/op
+BenchmarkBearerAuthMiddleware-8   	 2541928	       618.6 ns/op	     144 B/op	       4 allocs/op
+BenchmarkBearerAuthMiddleware-8   	 1834970	       596.4 ns/op	     144 B/op	       4 allocs/op
+BenchmarkBearerAuthMiddleware-8   	 1878720	       687.4 ns/op	     144 B/op	       4 allocs/op
+BenchmarkBearerAuthMiddleware-8   	 1800522	       701.0 ns/op	     144 B/op	       4 allocs/op
+BenchmarkBearerAuthMiddleware-8   	 1792022	       722.0 ns/op	     144 B/op	       4 allocs/op
+BenchmarkBearerAuthMiddleware-8   	 1869669	       591.2 ns/op	     144 B/op	       4 allocs/op
+BenchmarkBearerAuthMiddleware-8   	 3792009	       530.8 ns/op	     144 B/op	       4 allocs/op
+BenchmarkBearerAuthMiddleware-8   	 1958210	       710.3 ns/op	     144 B/op	       4 allocs/op
+PASS
+ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks	27.229s

@@ -1,13 +1,18 @@
 package mwbenchmarks
 
 import (
-	"github.com/72sevenzy2/http-router/grouter"
+	"io"
+	"log/slog"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/72sevenzy2/http-router/grouter"
 )
 
 func BenchmarkLoggerMiddleware(b *testing.B) {
+	slog.SetDefault(slog.New(slog.NewTextHandler(io.Discard, nil))) // discard actual request logs.
+
 	r := grouter.NewGrouter()
 	r.Use(grouter.Logger(0)) // set as default request body logging size ( which is 0.)
 

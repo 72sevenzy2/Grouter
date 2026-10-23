@@ -18,9 +18,8 @@
  	Arch: amd64
  	Frequency: 10 reps for both grouter and mux.
 	```
-
- <h1 align="center">Getting started</h1>
 <br>
+ <h1 align="center">Getting started</h1>
 <h2>pre-requisites:</h2>
 <h4>when writing handlers, do make sure your using the custom Request struct instead of http.Request, which is grouter.Request</h4>
 <h4>When handling dynamic routes, the route parameter values are stored in alongside the grouter.Request struct ('params' map), that cam be retrieved like so:</h4>

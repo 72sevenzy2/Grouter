@@ -8,7 +8,7 @@
 - 0 external dependencies used (excluding ones made for Grouter).
 - Includes middleware, and also supports route specific middleware.
 - Route parameter compatibility.
-- proven to be faster compared to golangs stdlib router (see benchmarks/results/).
+- proven superiority in speed compared to golangs stdlib router (see benchmarks/results/).
 
   <h2>benchmark specifications:</h2>
   

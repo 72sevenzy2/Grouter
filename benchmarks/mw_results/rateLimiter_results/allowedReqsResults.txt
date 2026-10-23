@@ -1,0 +1,26 @@
+goos: windows
+goarch: amd64
+pkg: github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks/rateLimit_benchmarks
+cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+BenchmarkRateLimit_allowedReqs-8   	 2538118	       473.9 ns/op	     176 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 2716322	       436.3 ns/op	     176 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 2754790	       503.0 ns/op	     176 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 2039247	       545.6 ns/op	     176 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 2106415	       589.3 ns/op	     176 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1509768	       848.0 ns/op	     176 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1111515	      1071 ns/op	     176 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1000000	      1047 ns/op	     176 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1000000	      1081 ns/op	     176 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1000000	      1116 ns/op	     176 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1000000	      1041 ns/op	     176 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1000000	      1142 ns/op	     176 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1000000	      1076 ns/op	     176 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1000000	      1060 ns/op	     176 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1000000	      1103 ns/op	     176 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1437352	       833.7 ns/op	     176 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1237700	       976.0 ns/op	     176 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1290381	       949.6 ns/op	     176 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1224825	      1000 ns/op	     176 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1000000	      1010 ns/op	     176 B/op	       8 allocs/op
+PASS
+ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks/rateLimit_benchmarks	23.347s

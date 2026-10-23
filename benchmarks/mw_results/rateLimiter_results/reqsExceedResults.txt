@@ -1,0 +1,26 @@
+goos: windows
+goarch: amd64
+pkg: github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks/rateLimit_benchmarks
+cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+BenchmarkRateLimit_ReqsExceeded-8   	       1	      9400 ns/op	    1320 B/op	       8 allocs/op
+BenchmarkRateLimit_ReqsExceeded-8   	       1	      7600 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_ReqsExceeded-8   	       1	      2900 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_ReqsExceeded-8   	       1	      8300 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_ReqsExceeded-8   	       1	      2800 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_ReqsExceeded-8   	       1	      3000 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_ReqsExceeded-8   	       1	      2600 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_ReqsExceeded-8   	       1	      2200 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_ReqsExceeded-8   	       1	      3100 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_ReqsExceeded-8   	       1	      2800 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_ReqsExceeded-8   	       1	      2600 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_ReqsExceeded-8   	       1	      3000 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_ReqsExceeded-8   	       1	      3600 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_ReqsExceeded-8   	       1	      2900 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_ReqsExceeded-8   	       1	      1700 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_ReqsExceeded-8   	       1	      2700 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_ReqsExceeded-8   	       1	      2500 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_ReqsExceeded-8   	       1	      9700 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_ReqsExceeded-8   	       1	      2700 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_ReqsExceeded-8   	       1	      3800 ns/op	     168 B/op	       7 allocs/op
+PASS
+ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks/rateLimit_benchmarks	0.261s

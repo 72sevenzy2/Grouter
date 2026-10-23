@@ -1,0 +1,26 @@
+goos: windows
+goarch: amd64
+pkg: github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks/rateLimit_benchmarks
+cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+BenchmarkRateLimit_multiClients-8   	 1702465	       715.7 ns/op	     167 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1751610	       692.6 ns/op	     167 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1443633	       804.6 ns/op	     166 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1487161	       801.2 ns/op	     166 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1479747	       813.9 ns/op	     166 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1306111	       902.1 ns/op	     166 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1860402	       653.2 ns/op	     167 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1641734	       776.7 ns/op	     167 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1542163	       788.7 ns/op	     166 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1423293	       831.1 ns/op	     166 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1594807	       720.8 ns/op	     166 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1852228	       700.0 ns/op	     167 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1516237	       769.6 ns/op	     166 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1544038	       797.1 ns/op	     166 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1563230	       767.6 ns/op	     166 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1533207	       827.4 ns/op	     166 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1546575	       790.9 ns/op	     166 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1569898	       825.7 ns/op	     166 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1621898	       755.8 ns/op	     166 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1525510	       817.7 ns/op	     166 B/op	       7 allocs/op
+PASS
+ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks/rateLimit_benchmarks	25.692s

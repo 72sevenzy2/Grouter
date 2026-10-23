@@ -1,0 +1,26 @@
+goos: windows
+goarch: amd64
+pkg: github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks/rateLimit_benchmarks
+cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+BenchmarkRateLimit_parallelReqs-8   	 1884895	       662.7 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1873489	       668.7 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1772182	       722.5 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1684699	       709.6 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1695580	       600.2 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1744258	       686.7 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1672022	       714.6 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1754265	       710.6 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1657692	       722.3 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1640475	       619.0 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1924608	       739.1 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1584424	       736.6 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1629586	       748.0 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1664250	       751.4 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1584126	       757.7 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1591629	       718.4 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1576665	       740.9 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1678444	       739.2 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1702706	       752.5 ns/op	     168 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1582694	       744.8 ns/op	     168 B/op	       7 allocs/op
+PASS
+ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks/rateLimit_benchmarks	39.130s

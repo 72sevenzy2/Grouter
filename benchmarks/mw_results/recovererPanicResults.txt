@@ -1,0 +1,26 @@
+goos: windows
+goarch: amd64
+pkg: github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks
+cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+BenchmarkRecoveryMiddlewarePanic-8   	  311773	      3825 ns/op	    5664 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  311515	      3846 ns/op	    5664 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  277284	      4844 ns/op	    5664 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  317494	      4423 ns/op	    5664 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  352243	      4199 ns/op	    5664 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  321446	      4015 ns/op	    5664 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  293918	      4611 ns/op	    5664 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  339688	      4611 ns/op	    5664 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  216445	      5401 ns/op	    5664 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  284782	      4702 ns/op	    5664 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  247573	      4268 ns/op	    5664 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  355428	      4729 ns/op	    5664 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  226743	      4669 ns/op	    5664 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  238510	      4739 ns/op	    5663 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  315735	      3716 ns/op	    5664 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  297352	      5332 ns/op	    5664 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  253533	      4728 ns/op	    5664 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  256196	      5317 ns/op	    5664 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  304860	      4711 ns/op	    5664 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  261852	      4475 ns/op	    5664 B/op	      17 allocs/op
+PASS
+ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks	27.340s

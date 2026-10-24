@@ -2,25 +2,25 @@ goos: windows
 goarch: amd64
 pkg: github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks
 cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
-BenchmarkRecoveryMiddleware-8        	  675602	      1669 ns/op	    5233 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8        	  782232	      1659 ns/op	    5233 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8        	  692640	      2053 ns/op	    5233 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8        	  566274	      2107 ns/op	    5233 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8        	  623862	      1958 ns/op	    5233 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8        	  577413	      1878 ns/op	    5233 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8        	  722956	      2178 ns/op	    5233 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8        	  559902	      2546 ns/op	    5233 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8        	  582322	      2072 ns/op	    5233 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8        	  801554	      2238 ns/op	    5233 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8        	  805822	      2188 ns/op	    5233 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8        	  780858	      2191 ns/op	    5233 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8        	  499554	      2232 ns/op	    5233 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8        	  506084	      2346 ns/op	    5233 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8        	  630867	      2283 ns/op	    5233 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8        	  576063	      1771 ns/op	    5233 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8        	  604018	      1868 ns/op	    5233 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8        	  651751	      2342 ns/op	    5233 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8        	  636726	      2247 ns/op	    5233 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8        	  791520	      1869 ns/op	    5233 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  511705	      2025 ns/op	    5235 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  584670	      2033 ns/op	    5234 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  637432	      2552 ns/op	    5235 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  466285	      2673 ns/op	    5234 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  473289	      2535 ns/op	    5235 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  543145	      2635 ns/op	    5234 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  467432	      2510 ns/op	    5235 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  457863	      2556 ns/op	    5235 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  487236	      2562 ns/op	    5234 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  508036	      2549 ns/op	    5234 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  578031	      2530 ns/op	    5234 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  502092	      2598 ns/op	    5234 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  639644	      2581 ns/op	    5234 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  476466	      2491 ns/op	    5234 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  474639	      2552 ns/op	    5234 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  460784	      2527 ns/op	    5234 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  490636	      2260 ns/op	    5234 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  438091	      2307 ns/op	    5234 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  495387	      2451 ns/op	    5234 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  640604	      2443 ns/op	    5234 B/op	      13 allocs/op
 PASS
-ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks	53.378s
+ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks	27.045s

@@ -2,25 +2,25 @@ goos: windows
 goarch: amd64
 pkg: github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks
 cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
-BenchmarkLoggerMiddleware-8   	  137918	      8785 ns/op	     728 B/op	      29 allocs/op
-BenchmarkLoggerMiddleware-8   	  135212	      9241 ns/op	     728 B/op	      29 allocs/op
-BenchmarkLoggerMiddleware-8   	  119821	     11438 ns/op	     728 B/op	      29 allocs/op
-BenchmarkLoggerMiddleware-8   	   71073	     14466 ns/op	     729 B/op	      29 allocs/op
-BenchmarkLoggerMiddleware-8   	   94645	     17393 ns/op	     729 B/op	      29 allocs/op
-BenchmarkLoggerMiddleware-8   	   72048	     14641 ns/op	     728 B/op	      29 allocs/op
-BenchmarkLoggerMiddleware-8   	  174408	     16804 ns/op	     728 B/op	      29 allocs/op
-BenchmarkLoggerMiddleware-8   	  106394	     10450 ns/op	     728 B/op	      29 allocs/op
-BenchmarkLoggerMiddleware-8   	  201276	      6606 ns/op	     728 B/op	      29 allocs/op
-BenchmarkLoggerMiddleware-8   	  180224	      6919 ns/op	     728 B/op	      29 allocs/op
-BenchmarkLoggerMiddleware-8   	  153811	      7248 ns/op	     728 B/op	      29 allocs/op
-BenchmarkLoggerMiddleware-8   	  191443	      6684 ns/op	     728 B/op	      29 allocs/op
-BenchmarkLoggerMiddleware-8   	  202599	     14850 ns/op	     728 B/op	      29 allocs/op
-BenchmarkLoggerMiddleware-8   	   57993	     19356 ns/op	     730 B/op	      29 allocs/op
-BenchmarkLoggerMiddleware-8   	  159458	     16477 ns/op	     728 B/op	      29 allocs/op
-BenchmarkLoggerMiddleware-8   	  141355	     16051 ns/op	     728 B/op	      29 allocs/op
-BenchmarkLoggerMiddleware-8   	   66049	     15914 ns/op	     729 B/op	      29 allocs/op
-BenchmarkLoggerMiddleware-8   	  193854	     14603 ns/op	     728 B/op	      29 allocs/op
-BenchmarkLoggerMiddleware-8   	   79263	     16074 ns/op	     728 B/op	      29 allocs/op
-BenchmarkLoggerMiddleware-8   	   56677	     21008 ns/op	     729 B/op	      29 allocs/op
+BenchmarkLoggerMiddleware-8   	  222100	      5183 ns/op	     680 B/op	      28 allocs/op
+BenchmarkLoggerMiddleware-8   	  264958	      4934 ns/op	     680 B/op	      28 allocs/op
+BenchmarkLoggerMiddleware-8   	  250977	      5945 ns/op	     680 B/op	      28 allocs/op
+BenchmarkLoggerMiddleware-8   	  244402	      6013 ns/op	     680 B/op	      28 allocs/op
+BenchmarkLoggerMiddleware-8   	  195646	      6161 ns/op	     680 B/op	      28 allocs/op
+BenchmarkLoggerMiddleware-8   	  189842	      6143 ns/op	     680 B/op	      28 allocs/op
+BenchmarkLoggerMiddleware-8   	  168045	      6146 ns/op	     681 B/op	      28 allocs/op
+BenchmarkLoggerMiddleware-8   	  206138	      6291 ns/op	     680 B/op	      28 allocs/op
+BenchmarkLoggerMiddleware-8   	  220706	      5689 ns/op	     680 B/op	      28 allocs/op
+BenchmarkLoggerMiddleware-8   	  237972	      5284 ns/op	     680 B/op	      28 allocs/op
+BenchmarkLoggerMiddleware-8   	  186943	      6355 ns/op	     680 B/op	      28 allocs/op
+BenchmarkLoggerMiddleware-8   	  161925	      6895 ns/op	     680 B/op	      28 allocs/op
+BenchmarkLoggerMiddleware-8   	  209539	      5827 ns/op	     680 B/op	      28 allocs/op
+BenchmarkLoggerMiddleware-8   	  199225	      5896 ns/op	     680 B/op	      28 allocs/op
+BenchmarkLoggerMiddleware-8   	  244749	      6246 ns/op	     680 B/op	      28 allocs/op
+BenchmarkLoggerMiddleware-8   	  214556	      6005 ns/op	     680 B/op	      28 allocs/op
+BenchmarkLoggerMiddleware-8   	  190749	      6047 ns/op	     680 B/op	      28 allocs/op
+BenchmarkLoggerMiddleware-8   	  185072	      5445 ns/op	     680 B/op	      28 allocs/op
+BenchmarkLoggerMiddleware-8   	  193714	      6101 ns/op	     680 B/op	      28 allocs/op
+BenchmarkLoggerMiddleware-8   	  233035	      6542 ns/op	     680 B/op	      28 allocs/op
 PASS
-ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks	33.272s
+ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks	26.560s

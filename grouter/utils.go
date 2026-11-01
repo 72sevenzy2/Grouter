@@ -9,7 +9,7 @@ import (
 
 // func to check whether route is dynamic or static
 func isDynamic(path string) bool {
-	return strings.Contains(path, ":") // strings.Contains() returns a boolean
+	return strings.ContainsAny(path, ":*") // strings.Contains() returns a boolean
 }
 
 type pathIter struct {

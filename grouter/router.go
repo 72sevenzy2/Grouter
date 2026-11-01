@@ -74,15 +74,13 @@ func (r *Grouter) Handle(method string, path string, handler HandlerFunc, mws ..
 	}
 
 	// check if route is dynamic
-	if strings.Contains(normalisedpath, ":") { // fast path
-		if isDynamic(normalisedpath) {
-			r.DynamicRoutes[method] = append(r.DynamicRoutes[method], core.Route{
-				Method:  method,
-				Parts:   splitPath(normalisedpath),
-				Handler: handler,
-			})
-			return
-		}
+	if isDynamic(normalisedpath) { // fast path
+		r.DynamicRoutes[method] = append(r.DynamicRoutes[method], core.Route{
+			Method:  method,
+			Parts:   splitPath(normalisedpath),
+			Handler: handler,
+		})
+		return
 	}
 	staticR, ok := r.StaticRoutes[normalisedpath]
 	if !ok {

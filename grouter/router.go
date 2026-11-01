@@ -124,16 +124,18 @@ func (s *Grouter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	var storedParams core.Params
 	var storedParamsErr error
 
-	for _, route := range s.DynamicRoutes[r.Method] { // loop over dynamic routes which are grouped by methods
-		storedParams, storedParamsErr = match(route.Parts, path)
-		if storedParamsErr != nil {
-			continue
+	if Handler == nil { // fast path to avoid redundant dynamic scans.
+		for _, route := range s.DynamicRoutes[r.Method] { // loop over dynamic routes which are grouped by methods
+			storedParams, storedParamsErr = match(route.Parts, path)
+			if storedParamsErr != nil {
+				continue
+			}
+			if storedParams == nil {
+				continue // if no params were stored
+			}
+			Handler = route.Handler
+			break
 		}
-		if storedParams == nil {
-			continue // if no params were stored
-		}
-		Handler = route.Handler
-		break
 	}
 
 	if Handler == nil {

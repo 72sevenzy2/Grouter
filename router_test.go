@@ -44,9 +44,11 @@ func TestDynamicRoutes(t *testing.T) {
 	b := grouter.NewGrouter()
 
 	b.Handle(http.MethodGet, "/test/:id", func(w http.ResponseWriter, r *grouter.Request) {
-		for k, v := range r.Params {
-			t.Log(k, v)
+		val, ok := r.Get("id")
+		if !ok {
+			panic("route parameter does not exist.")
 		}
+		t.Log(val)
 		w.WriteHeader(http.StatusOK)
 	})
 	rec := httptest.NewRecorder()
@@ -63,9 +65,12 @@ func TestDynamicRoutes404(t *testing.T) {
 	b := grouter.NewGrouter()
 
 	b.Handle(http.MethodGet, "/test/:id", func(w http.ResponseWriter, r *grouter.Request) {
-		for k, v := range r.Params {
-			t.Log(k, v)
+		val, ok := r.Get("id")
+		if !ok {
+			panic("route parameter does not exist.")
 		}
+		t.Log(val)
+
 		w.WriteHeader(http.StatusOK)
 	})
 	rec := httptest.NewRecorder()

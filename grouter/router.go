@@ -137,6 +137,7 @@ func (s *Grouter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			continue // if no params were stored
 		}
 		Handler = route.Handler
+		break
 	}
 
 	if Handler == nil {

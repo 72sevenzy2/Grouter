@@ -9,7 +9,7 @@ import (
 
 // func to check whether route is dynamic or static
 func isDynamic(path string) bool {
-	return strings.ContainsAny(path, ":*") // strings.Contains() returns a boolean
+	return strings.ContainsAny(path, ":*")
 }
 
 type pathIter struct {
@@ -72,7 +72,24 @@ func splitPath(path string) []string {
 func match(routeP []string, reqP string) (core.Params, error) {
 	iter := NewPathIter(reqP)
 	var params core.Params
-	for _, rp := range routeP { // can use both reqP and routeP to loop over
+	for i, rp := range routeP { // can use either reqP and routeP to loop over
+		if strings.HasPrefix(rp, "*") {
+			key := rp[1:]
+			if key == "" || i != len(routeP)-1 {
+				return nil, InvalidPathError
+			}
+
+			if iter.pos >= len(iter.path) {
+				return nil, InvalidPathError
+			}
+
+			params = append(params, core.Param{
+				Key:   key,
+				Value: iter.path[iter.pos:],
+			})
+			return params, nil
+		}
+
 		reqp, ok := iter.next()
 		if !ok {
 			return nil, InvalidPathError
@@ -82,7 +99,7 @@ func match(routeP []string, reqP string) (core.Params, error) {
 				Key:   rp[1:],
 				Value: reqp,
 			})
-			continue
+			continue // todo: ask if can break here.
 		}
 
 		// verifies whether request path matches registered route path

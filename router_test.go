@@ -8,7 +8,7 @@ import (
 	"github.com/72sevenzy2/http-router/grouter"
 )
 
-func TestRouter(t *testing.T) {
+func TestStaticRoutes(t *testing.T) {
 	b := grouter.NewGrouter()
 
 	b.Handle(http.MethodGet, "/test/", func(w http.ResponseWriter, r *grouter.Request) {
@@ -24,7 +24,7 @@ func TestRouter(t *testing.T) {
 	}
 }
 
-func TestRouter404(t *testing.T) {
+func TestStaticRoutes404(t *testing.T) {
 	b := grouter.NewGrouter()
 
 	b.Handle(http.MethodGet, "/test/", func(w http.ResponseWriter, r *grouter.Request) {
@@ -32,6 +32,44 @@ func TestRouter404(t *testing.T) {
 	})
 	rec := httptest.NewRecorder()
 	rr := httptest.NewRequest(http.MethodGet, "/test/a", nil)
+
+	b.ServeHTTP(rec, rr)
+
+	if rec.Code != http.StatusNotFound {
+		t.Fatalf("expected status %d, got %d", http.StatusNotFound, rec.Code)
+	}
+}
+
+func TestDynamicRoutes(t *testing.T) {
+	b := grouter.NewGrouter()
+
+	b.Handle(http.MethodGet, "/test/:id", func(w http.ResponseWriter, r *grouter.Request) {
+		for k, v := range r.Params {
+			t.Log(k, v)
+		}
+		w.WriteHeader(http.StatusOK)
+	})
+	rec := httptest.NewRecorder()
+	rr := httptest.NewRequest(http.MethodGet, "/test/10", nil)
+
+	b.ServeHTTP(rec, rr)
+
+	if rec.Code != http.StatusOK {
+		t.Fatalf("expected status %d, got %d", http.StatusOK, rec.Code)
+	}
+}
+
+func TestDynamicRoutes404(t *testing.T) {
+	b := grouter.NewGrouter()
+
+	b.Handle(http.MethodGet, "/test/:id", func(w http.ResponseWriter, r *grouter.Request) {
+		for k, v := range r.Params {
+			t.Log(k, v)
+		}
+		w.WriteHeader(http.StatusOK)
+	})
+	rec := httptest.NewRecorder()
+	rr := httptest.NewRequest(http.MethodGet, "/test1/10", nil)
 
 	b.ServeHTTP(rec, rr)
 

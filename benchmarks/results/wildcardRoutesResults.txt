@@ -1,0 +1,26 @@
+goos: windows
+goarch: amd64
+pkg: github.com/72sevenzy2/http-router/benchmarks
+cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+BenchmarkGrouterWildcardRoute-8              	 6952728	       175.4 ns/op	     144 B/op	       4 allocs/op
+BenchmarkGrouterWildcardRoute-8              	 6523401	       180.7 ns/op	     144 B/op	       4 allocs/op
+BenchmarkGrouterWildcardRoute-8              	 6734398	       214.9 ns/op	     144 B/op	       4 allocs/op
+BenchmarkGrouterWildcardRoute-8              	 5726994	       228.1 ns/op	     144 B/op	       4 allocs/op
+BenchmarkGrouterWildcardRoute-8              	 6018337	       229.8 ns/op	     144 B/op	       4 allocs/op
+BenchmarkGrouterWildcardRoute-8              	 6344234	       219.7 ns/op	     144 B/op	       4 allocs/op
+BenchmarkGrouterWildcardRoute-8              	 5018998	       233.3 ns/op	     144 B/op	       4 allocs/op
+BenchmarkGrouterWildcardRoute-8              	 5029634	       208.0 ns/op	     144 B/op	       4 allocs/op
+BenchmarkGrouterWildcardRoute-8              	 5997870	       216.5 ns/op	     144 B/op	       4 allocs/op
+BenchmarkGrouterWildcardRoute-8              	 5095578	       217.5 ns/op	     144 B/op	       4 allocs/op
+BenchmarkGolangStdlibRouterWildCardRoute-8   	 1508193	       842.4 ns/op	     176 B/op	       7 allocs/op
+BenchmarkGolangStdlibRouterWildCardRoute-8   	 1516411	       838.5 ns/op	     176 B/op	       7 allocs/op
+BenchmarkGolangStdlibRouterWildCardRoute-8   	 1420935	       835.3 ns/op	     176 B/op	       7 allocs/op
+BenchmarkGolangStdlibRouterWildCardRoute-8   	 1442145	       821.1 ns/op	     176 B/op	       7 allocs/op
+BenchmarkGolangStdlibRouterWildCardRoute-8   	 1363765	       856.2 ns/op	     176 B/op	       7 allocs/op
+BenchmarkGolangStdlibRouterWildCardRoute-8   	 1371558	       876.6 ns/op	     176 B/op	       7 allocs/op
+BenchmarkGolangStdlibRouterWildCardRoute-8   	 1496649	       822.9 ns/op	     176 B/op	       7 allocs/op
+BenchmarkGolangStdlibRouterWildCardRoute-8   	 1720537	       744.8 ns/op	     176 B/op	       7 allocs/op
+BenchmarkGolangStdlibRouterWildCardRoute-8   	 1514617	       802.3 ns/op	     176 B/op	       7 allocs/op
+BenchmarkGolangStdlibRouterWildCardRoute-8   	 1410429	       875.5 ns/op	     176 B/op	       7 allocs/op
+PASS
+ok  	github.com/72sevenzy2/http-router/benchmarks	25.053s

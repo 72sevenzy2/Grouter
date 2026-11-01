@@ -18,8 +18,18 @@ type Request struct { // shared
 	Params     Params        // holding route parameters
 }
 
-type HandlerFunc func(http.ResponseWriter, *Request) // shared
-type Middleware func(HandlerFunc) HandlerFunc        // the middleware type (takes in the current handler and returns a new one)
+// retrieving particular route parameters.
+func (r *Request) Get(key string) (string, bool) {
+	for _, param := range r.Params {
+		if param.Key == key {
+			return param.Value, true
+		}
+	}
+	return "", false
+}
+
+type HandlerFunc func(http.ResponseWriter, *Request)
+type Middleware func(HandlerFunc) HandlerFunc // the middleware type (takes in the current handler and returns a new one)
 
 // Route struct to loop over dynamic routes
 type Route struct {

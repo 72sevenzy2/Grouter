@@ -2,25 +2,25 @@ goos: windows
 goarch: amd64
 pkg: github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks
 cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
-BenchmarkRecoveryMiddlewarePanic-8   	  307450	      4184 ns/op	    5672 B/op	      17 allocs/op
-BenchmarkRecoveryMiddlewarePanic-8   	  319912	      4055 ns/op	    5672 B/op	      17 allocs/op
-BenchmarkRecoveryMiddlewarePanic-8   	  325344	      4950 ns/op	    5673 B/op	      17 allocs/op
-BenchmarkRecoveryMiddlewarePanic-8   	  214351	      4691 ns/op	    5674 B/op	      17 allocs/op
-BenchmarkRecoveryMiddlewarePanic-8   	  246030	      4923 ns/op	    5674 B/op	      17 allocs/op
-BenchmarkRecoveryMiddlewarePanic-8   	  208730	      5088 ns/op	    5674 B/op	      17 allocs/op
-BenchmarkRecoveryMiddlewarePanic-8   	  248149	      4898 ns/op	    5674 B/op	      17 allocs/op
-BenchmarkRecoveryMiddlewarePanic-8   	  309175	      4257 ns/op	    5675 B/op	      17 allocs/op
-BenchmarkRecoveryMiddlewarePanic-8   	  286965	      4631 ns/op	    5673 B/op	      17 allocs/op
-BenchmarkRecoveryMiddlewarePanic-8   	  200740	      5490 ns/op	    5674 B/op	      17 allocs/op
-BenchmarkRecoveryMiddlewarePanic-8   	  235455	      4762 ns/op	    5675 B/op	      17 allocs/op
-BenchmarkRecoveryMiddlewarePanic-8   	  234052	      4923 ns/op	    5674 B/op	      17 allocs/op
-BenchmarkRecoveryMiddlewarePanic-8   	  311392	      4980 ns/op	    5675 B/op	      17 allocs/op
-BenchmarkRecoveryMiddlewarePanic-8   	  245287	      5171 ns/op	    5674 B/op	      17 allocs/op
-BenchmarkRecoveryMiddlewarePanic-8   	  293198	      4809 ns/op	    5674 B/op	      17 allocs/op
-BenchmarkRecoveryMiddlewarePanic-8   	  211086	      5101 ns/op	    5675 B/op	      17 allocs/op
-BenchmarkRecoveryMiddlewarePanic-8   	  299748	      5041 ns/op	    5673 B/op	      17 allocs/op
-BenchmarkRecoveryMiddlewarePanic-8   	  206138	      4935 ns/op	    5673 B/op	      17 allocs/op
-BenchmarkRecoveryMiddlewarePanic-8   	  219488	      5239 ns/op	    5673 B/op	      17 allocs/op
-BenchmarkRecoveryMiddlewarePanic-8   	  273246	      4731 ns/op	    5672 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  303603	      4227 ns/op	    5655 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  324680	      4738 ns/op	    5656 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  228607	      8120 ns/op	    5658 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  140460	      8669 ns/op	    5658 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  160824	      8035 ns/op	    5657 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  172632	      7756 ns/op	    5659 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  171154	      7949 ns/op	    5659 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  144082	      7664 ns/op	    5659 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  161886	      6511 ns/op	    5659 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  162762	      7888 ns/op	    5659 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  121586	      9350 ns/op	    5659 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  118108	     11300 ns/op	    5659 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  161691	      7477 ns/op	    5659 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  117835	      8857 ns/op	    5659 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  181233	      8030 ns/op	    5659 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  159236	      8821 ns/op	    5658 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  134347	      8671 ns/op	    5658 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  142789	      8416 ns/op	    5658 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  183764	      8312 ns/op	    5658 B/op	      17 allocs/op
+BenchmarkRecoveryMiddlewarePanic-8   	  134892	      8862 ns/op	    5658 B/op	      17 allocs/op
 PASS
-ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks	25.587s
+ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks	26.198s

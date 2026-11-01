@@ -2,25 +2,25 @@ goos: windows
 goarch: amd64
 pkg: github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks/rateLimit_benchmarks
 cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
-BenchmarkRateLimit_allowedReqs-8   	 2538118	       473.9 ns/op	     176 B/op	       8 allocs/op
-BenchmarkRateLimit_allowedReqs-8   	 2716322	       436.3 ns/op	     176 B/op	       8 allocs/op
-BenchmarkRateLimit_allowedReqs-8   	 2754790	       503.0 ns/op	     176 B/op	       8 allocs/op
-BenchmarkRateLimit_allowedReqs-8   	 2039247	       545.6 ns/op	     176 B/op	       8 allocs/op
-BenchmarkRateLimit_allowedReqs-8   	 2106415	       589.3 ns/op	     176 B/op	       8 allocs/op
-BenchmarkRateLimit_allowedReqs-8   	 1509768	       848.0 ns/op	     176 B/op	       8 allocs/op
-BenchmarkRateLimit_allowedReqs-8   	 1111515	      1071 ns/op	     176 B/op	       8 allocs/op
-BenchmarkRateLimit_allowedReqs-8   	 1000000	      1047 ns/op	     176 B/op	       8 allocs/op
-BenchmarkRateLimit_allowedReqs-8   	 1000000	      1081 ns/op	     176 B/op	       8 allocs/op
-BenchmarkRateLimit_allowedReqs-8   	 1000000	      1116 ns/op	     176 B/op	       8 allocs/op
-BenchmarkRateLimit_allowedReqs-8   	 1000000	      1041 ns/op	     176 B/op	       8 allocs/op
-BenchmarkRateLimit_allowedReqs-8   	 1000000	      1142 ns/op	     176 B/op	       8 allocs/op
-BenchmarkRateLimit_allowedReqs-8   	 1000000	      1076 ns/op	     176 B/op	       8 allocs/op
-BenchmarkRateLimit_allowedReqs-8   	 1000000	      1060 ns/op	     176 B/op	       8 allocs/op
-BenchmarkRateLimit_allowedReqs-8   	 1000000	      1103 ns/op	     176 B/op	       8 allocs/op
-BenchmarkRateLimit_allowedReqs-8   	 1437352	       833.7 ns/op	     176 B/op	       8 allocs/op
-BenchmarkRateLimit_allowedReqs-8   	 1237700	       976.0 ns/op	     176 B/op	       8 allocs/op
-BenchmarkRateLimit_allowedReqs-8   	 1290381	       949.6 ns/op	     176 B/op	       8 allocs/op
-BenchmarkRateLimit_allowedReqs-8   	 1224825	      1000 ns/op	     176 B/op	       8 allocs/op
-BenchmarkRateLimit_allowedReqs-8   	 1000000	      1010 ns/op	     176 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 2652037	       459.1 ns/op	     160 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 2728234	       448.2 ns/op	     160 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 2700292	       546.2 ns/op	     160 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1536400	       857.8 ns/op	     160 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1341430	       883.8 ns/op	     160 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1506160	       885.9 ns/op	     160 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1613509	       810.4 ns/op	     160 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1539686	       857.3 ns/op	     160 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1000000	      1036 ns/op	     160 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1226307	       992.4 ns/op	     160 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1252729	       945.8 ns/op	     160 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1332300	       838.2 ns/op	     160 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1344241	       869.7 ns/op	     160 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1312606	       915.6 ns/op	     160 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1000000	      1079 ns/op	     160 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1364805	       862.6 ns/op	     160 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1000000	      1110 ns/op	     160 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1324182	       933.8 ns/op	     160 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1293478	       897.3 ns/op	     160 B/op	       8 allocs/op
+BenchmarkRateLimit_allowedReqs-8   	 1222858	       941.9 ns/op	     160 B/op	       8 allocs/op
 PASS
-ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks/rateLimit_benchmarks	23.347s
+ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks/rateLimit_benchmarks	24.886s

@@ -2,25 +2,25 @@ goos: windows
 goarch: amd64
 pkg: github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks
 cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
-BenchmarkBasicAuthMiddleware-8   	 2407725	       489.0 ns/op	     192 B/op	       6 allocs/op
-BenchmarkBasicAuthMiddleware-8   	 2734729	       636.2 ns/op	     192 B/op	       6 allocs/op
-BenchmarkBasicAuthMiddleware-8   	  829312	      1237 ns/op	     192 B/op	       6 allocs/op
-BenchmarkBasicAuthMiddleware-8   	 1625778	       912.8 ns/op	     192 B/op	       6 allocs/op
-BenchmarkBasicAuthMiddleware-8   	 1340058	       804.9 ns/op	     192 B/op	       6 allocs/op
-BenchmarkBasicAuthMiddleware-8   	 1203583	       906.8 ns/op	     192 B/op	       6 allocs/op
-BenchmarkBasicAuthMiddleware-8   	 1403162	       958.2 ns/op	     192 B/op	       6 allocs/op
-BenchmarkBasicAuthMiddleware-8   	 1000000	      1086 ns/op	     192 B/op	       6 allocs/op
-BenchmarkBasicAuthMiddleware-8   	 2296542	       679.1 ns/op	     192 B/op	       6 allocs/op
-BenchmarkBasicAuthMiddleware-8   	 1000000	      1067 ns/op	     192 B/op	       6 allocs/op
-BenchmarkBasicAuthMiddleware-8   	 1000000	      1102 ns/op	     192 B/op	       6 allocs/op
-BenchmarkBasicAuthMiddleware-8   	 1000000	      1159 ns/op	     192 B/op	       6 allocs/op
-BenchmarkBasicAuthMiddleware-8   	 1000000	      1007 ns/op	     192 B/op	       6 allocs/op
-BenchmarkBasicAuthMiddleware-8   	 1000000	      1123 ns/op	     192 B/op	       6 allocs/op
-BenchmarkBasicAuthMiddleware-8   	 1375016	       826.1 ns/op	     192 B/op	       6 allocs/op
-BenchmarkBasicAuthMiddleware-8   	 1000000	      1142 ns/op	     192 B/op	       6 allocs/op
-BenchmarkBasicAuthMiddleware-8   	 1000000	      1009 ns/op	     192 B/op	       6 allocs/op
-BenchmarkBasicAuthMiddleware-8   	 1284900	       851.8 ns/op	     192 B/op	       6 allocs/op
-BenchmarkBasicAuthMiddleware-8   	 1380301	       911.5 ns/op	     192 B/op	       6 allocs/op
-BenchmarkBasicAuthMiddleware-8   	 1292457	       895.5 ns/op	     192 B/op	       6 allocs/op
+BenchmarkBasicAuthMiddleware-8   	 4009876	       291.9 ns/op	     176 B/op	       6 allocs/op
+BenchmarkBasicAuthMiddleware-8   	 4181950	       304.4 ns/op	     176 B/op	       6 allocs/op
+BenchmarkBasicAuthMiddleware-8   	 3741226	       353.6 ns/op	     176 B/op	       6 allocs/op
+BenchmarkBasicAuthMiddleware-8   	 2833224	       365.9 ns/op	     176 B/op	       6 allocs/op
+BenchmarkBasicAuthMiddleware-8   	 3338133	       400.8 ns/op	     176 B/op	       6 allocs/op
+BenchmarkBasicAuthMiddleware-8   	 2703781	       402.2 ns/op	     176 B/op	       6 allocs/op
+BenchmarkBasicAuthMiddleware-8   	 2792935	       542.3 ns/op	     176 B/op	       6 allocs/op
+BenchmarkBasicAuthMiddleware-8   	 2294522	       539.2 ns/op	     176 B/op	       6 allocs/op
+BenchmarkBasicAuthMiddleware-8   	 2465913	       504.5 ns/op	     176 B/op	       6 allocs/op
+BenchmarkBasicAuthMiddleware-8   	 2092346	       538.7 ns/op	     176 B/op	       6 allocs/op
+BenchmarkBasicAuthMiddleware-8   	 2527821	       502.9 ns/op	     176 B/op	       6 allocs/op
+BenchmarkBasicAuthMiddleware-8   	 2502152	       517.1 ns/op	     176 B/op	       6 allocs/op
+BenchmarkBasicAuthMiddleware-8   	 2210396	       539.0 ns/op	     176 B/op	       6 allocs/op
+BenchmarkBasicAuthMiddleware-8   	 2266065	       564.2 ns/op	     176 B/op	       6 allocs/op
+BenchmarkBasicAuthMiddleware-8   	 2104129	       526.3 ns/op	     176 B/op	       6 allocs/op
+BenchmarkBasicAuthMiddleware-8   	 2364420	       511.5 ns/op	     176 B/op	       6 allocs/op
+BenchmarkBasicAuthMiddleware-8   	 1919986	       657.0 ns/op	     176 B/op	       6 allocs/op
+BenchmarkBasicAuthMiddleware-8   	 2086057	       555.8 ns/op	     176 B/op	       6 allocs/op
+BenchmarkBasicAuthMiddleware-8   	 2108830	       601.2 ns/op	     176 B/op	       6 allocs/op
+BenchmarkBasicAuthMiddleware-8   	 1628052	       657.2 ns/op	     176 B/op	       6 allocs/op
 PASS
-ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks	26.810s
+ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks	25.882s

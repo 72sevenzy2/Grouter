@@ -2,25 +2,25 @@ goos: windows
 goarch: amd64
 pkg: github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks
 cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
-BenchmarkRecoveryMiddleware-8   	  511705	      2025 ns/op	    5235 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8   	  584670	      2033 ns/op	    5234 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8   	  637432	      2552 ns/op	    5235 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8   	  466285	      2673 ns/op	    5234 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8   	  473289	      2535 ns/op	    5235 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8   	  543145	      2635 ns/op	    5234 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8   	  467432	      2510 ns/op	    5235 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8   	  457863	      2556 ns/op	    5235 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8   	  487236	      2562 ns/op	    5234 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8   	  508036	      2549 ns/op	    5234 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8   	  578031	      2530 ns/op	    5234 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8   	  502092	      2598 ns/op	    5234 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8   	  639644	      2581 ns/op	    5234 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8   	  476466	      2491 ns/op	    5234 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8   	  474639	      2552 ns/op	    5234 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8   	  460784	      2527 ns/op	    5234 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8   	  490636	      2260 ns/op	    5234 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8   	  438091	      2307 ns/op	    5234 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8   	  495387	      2451 ns/op	    5234 B/op	      13 allocs/op
-BenchmarkRecoveryMiddleware-8   	  640604	      2443 ns/op	    5234 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  631645	      2137 ns/op	    5218 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  673850	      2162 ns/op	    5219 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  382468	      3111 ns/op	    5218 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  395269	      2776 ns/op	    5218 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  604688	      2923 ns/op	    5218 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  389450	      3918 ns/op	    5219 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  248929	      4505 ns/op	    5219 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  343917	      4886 ns/op	    5219 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  215955	      5193 ns/op	    5218 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  270144	      4547 ns/op	    5218 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  216007	      4852 ns/op	    5218 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  267446	      4150 ns/op	    5219 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  392542	      4106 ns/op	    5219 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  326070	      3891 ns/op	    5218 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  274893	      3974 ns/op	    5218 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  314775	      3767 ns/op	    5219 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  282740	      4326 ns/op	    5218 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  282063	      4473 ns/op	    5218 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  347306	      4074 ns/op	    5218 B/op	      13 allocs/op
+BenchmarkRecoveryMiddleware-8   	  341260	      4695 ns/op	    5218 B/op	      13 allocs/op
 PASS
-ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks	27.045s
+ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks	26.615s

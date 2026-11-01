@@ -171,7 +171,5 @@ func TestRateLimiter(t *testing.T) {
 		}()
 	}
 	wg.Wait()
-
 	t.Log("requests received: ", recs)
-
 }

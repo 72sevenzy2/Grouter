@@ -127,9 +127,7 @@ func (s *Grouter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	for _, route := range s.DynamicRoutes[r.Method] { // loop over dynamic routes which are grouped by methods
 		storedParams, storedParamsErr = match(route.Parts, path)
 		if storedParamsErr != nil {
-			// request path does not match route path.
-			response.JSON(w, http.StatusNotFound, nil, InvalidPathError.Error())
-			return
+			continue
 		}
 		if storedParams == nil {
 			continue // if no params were stored

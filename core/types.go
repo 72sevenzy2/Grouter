@@ -14,8 +14,7 @@ type Param struct {
 type Params []Param
 type Request struct { // shared
 	*http.Request
-	ContextReq *http.Request // for timeout mw (WithContext() usage)
-	Params     Params        // holding route parameters
+	Params Params // holding route parameters
 }
 
 // retrieving particular route parameters.

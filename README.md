@@ -8,7 +8,8 @@
 - 0 external dependencies used (excluding ones made for Grouter).
 - Includes middleware, and also supports route specific middleware.
 - Route parameter compatibility.
-- proven superiority in speed compared to golangs stdlib router (see benchmarks/results/).
+- Wildcard route compatability.
+- superiority with speed (ns/op) compared to golangs stdlib router (see benchmarks/results/).
 
   <h2>benchmark specifications:</h2>
   
@@ -19,45 +20,14 @@
  	Frequency: 10 reps for both grouter and mux.
 	```
 <br>
- <h1 align="center">Getting started</h1>
-<h2>pre-requisites:</h2>
+<h1 align="center">Getting started</h1>
+<h2 align="center">pre-requisite:</h2>
 <h4>when writing handlers, do make sure your using the custom Request struct instead of http.Request, which is grouter.Request</h4>
-<h4>When handling dynamic routes, the route parameter values are stored in inside the grouter.Request struct ('Params' field), that can be retrieved like so:</h4>
-
-```
- package main
-
-import (
-	"fmt"
-	"net/http"
-
-	"github.com/72sevenzy2/Grouter/grouter"
-)
-
-func main() {
-	r := grouter.NewGrouter()
-
-	r.Get("/user/:64", func(w http.ResponseWriter, r *grouter.Request) {
-		HandleThisFunc()...
-		param, ok := r.Params["user"]
-		if !ok {
-			handleErr()
-		}
-	})
-
-	fmt.Println("server running on port 8080")
-	if err := http.ListenAndServe(":8080", r); err != nil {
-		panic(err)
-	}
-}
-
-```
 <br>
-
 <h1 align="center">General usage:</h1>
 
 ```
- package main
+package main
 
 import (
 	"fmt"
@@ -80,7 +50,74 @@ func main() {
 }
 
 ```
-<h2 align="center">Grouping routes:</h2>
+
+<h2 align="center">handling dynamic routes:</h2>
+
+```
+package main
+
+import (
+	"fmt"
+	"net/http"
+
+	"github.com/72sevenzy2/Grouter/grouter"
+)
+
+func main() {
+	r := grouter.NewGrouter()
+
+	// dynamic prefixes start with ":"
+	r.Handle(http.MethodGet, "/test/:id", func(w http.ResponseWriter, r *grouter.Request) {
+		val, ok := r.Get("id")
+		if !ok {
+			panic("route parameter does not exist.")
+		}
+		fmt.Println(val)
+		w.WriteHeader(http.StatusOK)
+	})
+
+	fmt.Println("server running on port 8080")
+	if err := http.ListenAndServe(":8080", r); err != nil {
+		panic(err)
+	}
+}
+```
+
+<h2 align="center">handling wildcard routes:</h2>
+
+```
+package main
+
+import (
+	"fmt"
+	"net/http"
+
+	"github.com/72sevenzy2/Grouter/grouter"
+)
+
+func main() {
+	r := grouter.NewGrouter()
+
+	// wildcard prefixes start with '*'
+	r.Handle(http.MethodGet, "/test/*filePath", func(w http.ResponseWriter, r *grouter.Request) {
+		// val -> whatever path was given after '/test/'.
+		val, ok := r.Get("filePath")
+		if !ok {
+			panic("route parameter does not exist.")
+		}
+		fmt.Println(val)
+
+		w.WriteHeader(http.StatusOK)
+	})
+
+	fmt.Println("server running on port 8080")
+	if err := http.ListenAndServe(":8080", r); err != nil {
+		panic(err)
+	}
+}
+```
+
+<h2 align="center">route grouping with .Group():</h2>
 
 ```
 package main
@@ -163,8 +200,7 @@ func main() {
 ^ Request body read from the logging middleware can be capped, the default size being 1KiB, but can be configured via passing in an limit in grouter.Logger(..), like such: "r.Use(grouter.Logger(1024 * 2)" (2 KiB cap), though be sure the limit passed in is of appropriate type (uint32).
 <br>
 
-<br>
-<h2 align="center">Route-specific middleware:</h2>
+<h2 align="center">lastly, to handle route-specific middleware:</h2>
 
 ```
 package main

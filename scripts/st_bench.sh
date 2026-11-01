@@ -2,7 +2,7 @@
 
 cd .. || exit 1
 cd benchmarks || exit 1
-go test -bench="^(BenchmarkGrouterStaticRoutes|BenchmarkGolangStdlibStaticRoutes)$" -run=^$ -benchmem -cpuprofile=2cpu.prof -memprofile=2mem.prof -count=10 > results/staticBenchmarks.txt
-benchstat staticBenchmarks.txt
+go test -bench="^(BenchmarkGrouterStaticRoutes|BenchmarkGolangStdlibStaticRoutes)$" -run=^$ -benchmem -cpuprofile=profiles/StaticRoutesCpu.prof -memprofile=profiles/StaticRoutesMem.prof -count=10 > results/staticBenchmarks.txt
+benchstat results/staticBenchmarks.txt
 
-go tool pprof profiles/2mem.prof
+go tool pprof profiles/StaticRoutesMem.prof

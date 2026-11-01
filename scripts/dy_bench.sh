@@ -2,7 +2,7 @@
 
 cd .. || exit 1
 cd benchmarks || exit 1
-go test -bench="^(BenchmarkGrouterDynamicRoutes|BenchmarkGolangStdlibRouterDynamicRoutes)$" -run=^$ -benchmem -cpuprofile=1cpu.prof -memprofile=1mem.prof -count=10 > results/dynamicBenchmarks.txt
-benchstat dynamicBenchmarks.txt
+go test -bench="^(BenchmarkGrouterDynamicRoutes|BenchmarkGolangStdlibRouterDynamicRoutes)$" -run=^$ -benchmem -cpuprofile=profiles/DynamicRoutesCpu.prof -memprofile=profiles/DynamicRoutesMem.prof -count=10 > results/dynamicBenchmarks.txt
+benchstat results/dynamicBenchmarks.txt
 
-go tool pprof profiles/1mem.prof
+go tool pprof profiles/DynamicRoutesMem.prof

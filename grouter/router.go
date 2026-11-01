@@ -74,15 +74,13 @@ func (r *Grouter) Handle(method string, path string, handler HandlerFunc, mws ..
 	}
 
 	// check if route is dynamic
-	if strings.Contains(normalisedpath, ":") { // fast path
-		if isDynamic(normalisedpath) {
-			r.DynamicRoutes[method] = append(r.DynamicRoutes[method], core.Route{
-				Method:  method,
-				Parts:   splitPath(normalisedpath),
-				Handler: handler,
-			})
-			return
-		}
+	if isDynamic(normalisedpath) { // fast path
+		r.DynamicRoutes[method] = append(r.DynamicRoutes[method], core.Route{
+			Method:  method,
+			Parts:   splitPath(normalisedpath),
+			Handler: handler,
+		})
+		return
 	}
 	staticR, ok := r.StaticRoutes[normalisedpath]
 	if !ok {
@@ -126,17 +124,18 @@ func (s *Grouter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	var storedParams core.Params
 	var storedParamsErr error
 
-	for _, route := range s.DynamicRoutes[r.Method] { // loop over dynamic routes which are grouped by methods
-		storedParams, storedParamsErr = match(route.Parts, path)
-		if storedParamsErr != nil {
-			// request path does not match route path.
-			response.JSON(w, http.StatusNotFound, nil, InvalidPathError.Error())
-			return
+	if Handler == nil { // fast path to avoid redundant dynamic scans.
+		for _, route := range s.DynamicRoutes[r.Method] { // loop over dynamic routes which are grouped by methods
+			storedParams, storedParamsErr = match(route.Parts, path)
+			if storedParamsErr != nil {
+				continue
+			}
+			if storedParams == nil {
+				continue // if no params were stored
+			}
+			Handler = route.Handler
+			break
 		}
-		if storedParams == nil {
-			continue // if no params were stored
-		}
-		Handler = route.Handler
 	}
 
 	if Handler == nil {

@@ -23,3 +23,36 @@ func TestRouter(t *testing.T) {
 		t.Fatalf("expected status %d, got %d", http.StatusOK, rec.Code)
 	}
 }
+
+func TestRouter404(t *testing.T) {
+	b := grouter.NewGrouter()
+
+	b.Handle(http.MethodGet, "/test/", func(w http.ResponseWriter, r *grouter.Request) {
+		w.WriteHeader(http.StatusOK)
+	})
+	rec := httptest.NewRecorder()
+	rr := httptest.NewRequest(http.MethodGet, "/test/a", nil)
+
+	b.ServeHTTP(rec, rr)
+
+	if rec.Code != http.StatusNotFound {
+		t.Fatalf("expected status %d, got %d", http.StatusNotFound, rec.Code)
+	}
+}
+
+func TestWildcardRoute(t *testing.T) {
+	b := grouter.NewGrouter()
+
+	b.Handle(http.MethodGet, "/test/*filepath", func(w http.ResponseWriter, r *grouter.Request) {
+		w.WriteHeader(http.StatusOK)
+	})
+	rec := httptest.NewRecorder()
+	rr := httptest.NewRequest(http.MethodGet, "/test/someFile", nil)
+
+	b.ServeHTTP(rec, rr)
+
+	if rec.Code != http.StatusOK {
+		t.Fatalf("expected status %d, got %d", http.StatusOK, rec.Code)
+	}
+
+}

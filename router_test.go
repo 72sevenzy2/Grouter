@@ -11,7 +11,7 @@ import (
 func TestStaticRoutes(t *testing.T) {
 	b := grouter.NewGrouter()
 
-	b.Handle(http.MethodGet, "/test/", func(w http.ResponseWriter, r *grouter.Request) {
+	b.Get("/test/", func(w http.ResponseWriter, r *grouter.Request) {
 		w.WriteHeader(http.StatusOK)
 	})
 	rec := httptest.NewRecorder()
@@ -27,7 +27,7 @@ func TestStaticRoutes(t *testing.T) {
 func TestStaticRoutes404(t *testing.T) {
 	b := grouter.NewGrouter()
 
-	b.Handle(http.MethodGet, "/test/", func(w http.ResponseWriter, r *grouter.Request) {
+	b.Get("/test/", func(w http.ResponseWriter, r *grouter.Request) {
 		w.WriteHeader(http.StatusOK)
 	})
 	rec := httptest.NewRecorder()
@@ -43,7 +43,7 @@ func TestStaticRoutes404(t *testing.T) {
 func TestDynamicRoutes(t *testing.T) {
 	b := grouter.NewGrouter()
 
-	b.Handle(http.MethodGet, "/test/:id", func(w http.ResponseWriter, r *grouter.Request) {
+	b.Get("/test/:id", func(w http.ResponseWriter, r *grouter.Request) {
 		val, ok := r.Get("id")
 		if !ok {
 			panic("route parameter does not exist.")
@@ -64,7 +64,7 @@ func TestDynamicRoutes(t *testing.T) {
 func TestDynamicRoutes404(t *testing.T) {
 	b := grouter.NewGrouter()
 
-	b.Handle(http.MethodGet, "/test/:id", func(w http.ResponseWriter, r *grouter.Request) {
+	b.Get("/test/:id", func(w http.ResponseWriter, r *grouter.Request) {
 		val, ok := r.Get("id")
 		if !ok {
 			panic("route parameter does not exist.")
@@ -86,7 +86,7 @@ func TestDynamicRoutes404(t *testing.T) {
 func TestWildcardRoute(t *testing.T) {
 	b := grouter.NewGrouter()
 
-	b.Handle(http.MethodGet, "/test/*filepath", func(w http.ResponseWriter, r *grouter.Request) {
+	b.Get("/test/*filepath", func(w http.ResponseWriter, r *grouter.Request) {
 		w.WriteHeader(http.StatusOK)
 	})
 	rec := httptest.NewRecorder()

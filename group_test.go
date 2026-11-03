@@ -13,7 +13,7 @@ func TestStandardGrouping(t *testing.T) {
 
 	api := b.Group("/test")
 
-	api.Handle(http.MethodGet, "/test2", func(w http.ResponseWriter, r *grouter.Request) {
+	api.Get("/test2", func(w http.ResponseWriter, r *grouter.Request) {
 		w.WriteHeader(http.StatusOK)
 	})
 
@@ -35,7 +35,7 @@ func TestInlineNests(t *testing.T) {
 
 	api := b.Group("/test", "/r1", "/2")
 
-	api.Handle(http.MethodGet, "/testr", func(w http.ResponseWriter, r *grouter.Request) {
+	api.Get("/testr", func(w http.ResponseWriter, r *grouter.Request) {
 		w.WriteHeader(http.StatusOK)
 	})
 
@@ -62,7 +62,7 @@ func TestNestedGroups(t *testing.T) {
 	v2 := v1.Group("/child2")
 	v2.Use(grouter.Recoverer())
 
-	v2.Handle(http.MethodGet, "/testchild", func(w http.ResponseWriter, r *grouter.Request) {
+	v2.Get("/testchild", func(w http.ResponseWriter, r *grouter.Request) {
 		w.WriteHeader(http.StatusOK)
 	})
 

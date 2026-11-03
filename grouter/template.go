@@ -6,10 +6,10 @@ import (
 
 // pre-defined html templates.
 
-func Display404(w http.ResponseWriter) error {
+func Display404(w http.ResponseWriter) (int, error) {
 	w.Header().Set("content-type", "text/html")
 	w.WriteHeader(404)
-	w.Write([]byte(`
+	return w.Write([]byte(`
 	<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,13 +81,12 @@ func Display404(w http.ResponseWriter) error {
 </body>
 </html>
 	`))
-	return nil
 }
 
-func DisplayUnauthorized(w http.ResponseWriter) error {
+func DisplayUnauthorized(w http.ResponseWriter) (int, error) {
 	w.Header().Set("content-type", "text/html")
 	w.WriteHeader(401)
-	w.Write([]byte(`
+	return w.Write([]byte(`
 	<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -159,13 +158,12 @@ func DisplayUnauthorized(w http.ResponseWriter) error {
 </body>
 </html>
 	`))
-	return nil
 }
 
-func DisplayForbidden(w http.ResponseWriter) error {
+func DisplayForbidden(w http.ResponseWriter) (int, error) {
 	w.Header().Set("content-type", "text/html")
 	w.WriteHeader(403)
-	w.Write([]byte(`
+	return w.Write([]byte(`
 	<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -237,13 +235,12 @@ func DisplayForbidden(w http.ResponseWriter) error {
 </body>
 </html>
 	`))
-	return nil
 }
 
-func DisplayInternalServerError(w http.ResponseWriter) error {
+func DisplayInternalServerError(w http.ResponseWriter) (int, error) {
 	w.Header().Set("content-type", "text/html")
 	w.WriteHeader(500)
-	w.Write([]byte(`
+	return w.Write([]byte(`
 	<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -315,5 +312,4 @@ func DisplayInternalServerError(w http.ResponseWriter) error {
 </body>
 </html>
 	`))
-	return nil
 }

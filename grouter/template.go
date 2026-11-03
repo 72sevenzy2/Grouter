@@ -92,8 +92,6 @@ func DisplayStatus(w http.ResponseWriter, ep ErrorPage) (int, error) {
 // pre-defined html templates.
 
 func Display404(w http.ResponseWriter) (int, error) {
-	w.Header().Set("content-type", "text/html")
-	w.WriteHeader(404)
 	return DisplayStatus(w, ErrorPage{
 		Code:       http.StatusNotFound,
 		Title:      "404 - not found",
@@ -103,8 +101,6 @@ func Display404(w http.ResponseWriter) (int, error) {
 }
 
 func DisplayUnauthorized(w http.ResponseWriter) (int, error) {
-	w.Header().Set("content-type", "text/html")
-	w.WriteHeader(401)
 	return DisplayStatus(w, ErrorPage{
 		Code:       http.StatusUnauthorized,
 		Title:      fmt.Sprintf("status %d", http.StatusUnauthorized),
@@ -114,8 +110,6 @@ func DisplayUnauthorized(w http.ResponseWriter) (int, error) {
 }
 
 func DisplayForbidden(w http.ResponseWriter) (int, error) {
-	w.Header().Set("content-type", "text/html")
-	w.WriteHeader(403)
 	return DisplayStatus(w, ErrorPage{
 		Code:       http.StatusForbidden,
 		Title:      fmt.Sprintf("status %d", http.StatusForbidden),
@@ -125,8 +119,6 @@ func DisplayForbidden(w http.ResponseWriter) (int, error) {
 }
 
 func DisplayInternalServerError(w http.ResponseWriter) (int, error) {
-	w.Header().Set("content-type", "text/html")
-	w.WriteHeader(500)
 	return DisplayStatus(w, ErrorPage{
 		Code:       http.StatusInternalServerError,
 		Title:      fmt.Sprintf("status %d", http.StatusInternalServerError),

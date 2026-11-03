@@ -1,21 +1,28 @@
 package grouter
 
 import (
+	"fmt"
 	"net/http"
 )
 
-// pre-defined html templates.
+type ErrorPage struct {
+	Code       int
+	Title      string
+	Heading    string
+	Descripion string
+}
 
-func Display404(w http.ResponseWriter) (int, error) {
-	w.Header().Set("content-type", "text/html")
-	w.WriteHeader(404)
-	return w.Write([]byte(`
+func DisplayStatus(w http.ResponseWriter, ep ErrorPage) (int, error) {
+	w.Header().Set("content-type", "text/html; charset='utf-8")
+	w.WriteHeader(ep.Code)
+
+	return w.Write([]byte(fmt.Sprintf(`
 	<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - page not found</title>
+    <title>%s</title>
     <style>
         * {
             box-sizing: border-box;
@@ -74,13 +81,25 @@ func Display404(w http.ResponseWriter) (int, error) {
 </head>
 <body>
     <div class="container">
-        <h1>404</h1>
-        <h2>page not found</h2>
-        <p>Sorry, the page you are looking for doesn't exist, has been removed, or the URL was typed incorrectly.</p>
+        <h1>%s</h1>
+        <h2>%s</h2>
     </div>
 </body>
 </html>
-	`))
+`, ep.Title, ep.Heading, ep.Descripion)))
+}
+
+// pre-defined html templates.
+
+func Display404(w http.ResponseWriter) (int, error) {
+	w.Header().Set("content-type", "text/html")
+	w.WriteHeader(404)
+	return DisplayStatus(w, ErrorPage{
+		Code:       http.StatusNotFound,
+		Title:      "404 - not found",
+		Heading:    "page not found",
+		Descripion: "Sorry, the page you were looking for was not found.",
+	})
 }
 
 func DisplayUnauthorized(w http.ResponseWriter) (int, error) {

@@ -91,7 +91,7 @@ func DisplayStatus(w http.ResponseWriter, ep ErrorPage) (int, error) {
 
 // pre-defined html templates.
 
-func Display404(w http.ResponseWriter) (int, error) {
+func DisplayNotFound(w http.ResponseWriter) (int, error) {
 	return DisplayStatus(w, ErrorPage{
 		Code:       http.StatusNotFound,
 		Title:      "404 - not found",

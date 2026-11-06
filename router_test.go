@@ -5,7 +5,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/72sevenzy2/http-router/grouter"
+	"github.com/72sevenzy2/grouter/grouter"
 )
 
 func TestStaticRoutes(t *testing.T) {

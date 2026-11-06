@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/72sevenzy2/http-router/core"
+	"github.com/72sevenzy2/grouter/core"
 )
 
 // func to check whether route is dynamic or static

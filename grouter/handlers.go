@@ -3,7 +3,7 @@ package grouter
 import (
 	"net/http"
 
-	"github.com/72sevenzy2/http-router/core"
+	"github.com/72sevenzy2/grouter/core"
 )
 
 // handler methods as alternative to Handle(...).
@@ -24,6 +24,7 @@ func (r *Grouter) Put(path string, handler core.HandlerFunc, mws ...core.Middlew
 func (r *Grouter) Del(path string, handler core.HandlerFunc, mws ...core.Middleware) {
 	r.Handle(http.MethodDelete, path, handler, mws...)
 }
+
 // connect, head, options, patch, tree
 func (r *Grouter) Connect(path string, handler core.HandlerFunc, mws ...core.Middleware) {
 	r.Handle(http.MethodConnect, path, handler, mws...)

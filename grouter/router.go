@@ -22,7 +22,7 @@ import (
 	"strings"
 
 	"errors"
-	"github.com/72sevenzy2/http-router/core"
+	"github.com/72sevenzy2/grouter/core"
 	"github.com/72sevenzy2/json-parser"
 )
 

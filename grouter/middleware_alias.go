@@ -6,7 +6,7 @@ import (
 	"time"
 
 	mw "github.com/72sevenzy2/Grouter-middlewares"
-	"github.com/72sevenzy2/http-router/core"
+	"github.com/72sevenzy2/grouter/core"
 )
 
 // NewLimiter is a method of the Limiter struct, in which also holds the RateLimiter which is the middleware.

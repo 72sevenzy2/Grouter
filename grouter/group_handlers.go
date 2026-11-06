@@ -3,7 +3,7 @@ package grouter
 import (
 	"net/http"
 
-	"github.com/72sevenzy2/http-router/core"
+	"github.com/72sevenzy2/grouter/core"
 )
 
 // group handlers.

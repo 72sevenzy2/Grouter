@@ -8,7 +8,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/72sevenzy2/http-router/grouter"
+	"github.com/72sevenzy2/grouter/grouter"
 )
 
 func TestCancelFunc(t *testing.T) {

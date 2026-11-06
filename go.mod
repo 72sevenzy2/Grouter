@@ -1,4 +1,4 @@
-module github.com/72sevenzy2/http-router
+module github.com/72sevenzy2/grouter
 
 go 1.25.5
 

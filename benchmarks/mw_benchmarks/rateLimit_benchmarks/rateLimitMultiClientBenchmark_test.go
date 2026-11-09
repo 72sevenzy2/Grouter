@@ -6,7 +6,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/72sevenzy2/http-router/grouter"
+	"github.com/72sevenzy2/grouter/grouter"
 )
 
 func BenchmarkRateLimit_multiClients(b *testing.B) {

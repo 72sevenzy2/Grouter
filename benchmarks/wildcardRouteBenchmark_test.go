@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/72sevenzy2/http-router/grouter"
+	"github.com/72sevenzy2/grouter/grouter"
 	"net/http"
 	"net/http/httptest"
 	"testing"

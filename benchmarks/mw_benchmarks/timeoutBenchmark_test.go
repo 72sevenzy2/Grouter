@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/72sevenzy2/http-router/grouter"
+	"github.com/72sevenzy2/grouter/grouter"
 )
 
 func BenchmarkTimeoutMiddleware(b *testing.B) {

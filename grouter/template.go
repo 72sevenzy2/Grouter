@@ -5,14 +5,14 @@ import (
 	"net/http"
 )
 
-type ErrorPage struct {
+type DisplayStatusConfig struct {
 	Code       int
 	Title      string
 	Heading    string
 	Descripion string
 }
 
-func DisplayStatus(w http.ResponseWriter, ep ErrorPage) (int, error) {
+func DisplayStatus(w http.ResponseWriter, ep DisplayStatusConfig) (int, error) {
 	w.Header().Set("content-type", "text/html; charset='utf-8")
 	w.WriteHeader(ep.Code)
 
@@ -92,7 +92,7 @@ func DisplayStatus(w http.ResponseWriter, ep ErrorPage) (int, error) {
 // pre-defined html templates.
 
 func DisplayNotFound(w http.ResponseWriter) (int, error) {
-	return DisplayStatus(w, ErrorPage{
+	return DisplayStatus(w, DisplayStatusConfig{
 		Code:       http.StatusNotFound,
 		Title:      "404 - not found",
 		Heading:    "page not found",
@@ -101,7 +101,7 @@ func DisplayNotFound(w http.ResponseWriter) (int, error) {
 }
 
 func DisplayUnauthorized(w http.ResponseWriter) (int, error) {
-	return DisplayStatus(w, ErrorPage{
+	return DisplayStatus(w, DisplayStatusConfig{
 		Code:       http.StatusUnauthorized,
 		Title:      fmt.Sprintf("status %d", http.StatusUnauthorized),
 		Heading:    "status unauthorized",
@@ -110,7 +110,7 @@ func DisplayUnauthorized(w http.ResponseWriter) (int, error) {
 }
 
 func DisplayForbidden(w http.ResponseWriter) (int, error) {
-	return DisplayStatus(w, ErrorPage{
+	return DisplayStatus(w, DisplayStatusConfig{
 		Code:       http.StatusForbidden,
 		Title:      fmt.Sprintf("status %d", http.StatusForbidden),
 		Heading:    "status forbidden.",
@@ -119,7 +119,7 @@ func DisplayForbidden(w http.ResponseWriter) (int, error) {
 }
 
 func DisplayInternalServerError(w http.ResponseWriter) (int, error) {
-	return DisplayStatus(w, ErrorPage{
+	return DisplayStatus(w, DisplayStatusConfig{
 		Code:       http.StatusInternalServerError,
 		Title:      fmt.Sprintf("status %d", http.StatusInternalServerError),
 		Heading:    "status internal server error.",

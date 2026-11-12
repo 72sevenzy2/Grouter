@@ -19,10 +19,20 @@
  	Arch: amd64
  	Frequency: 10 reps for both grouter and mux.
 	```
+
+
+
+<h2 align="center">pre-requisite:</h2>
+<h3 align="center">when writing handlers, do make sure your using grouter's request struct instead of http.Request, which is grouter.Request</h3>
 <br>
 <h1 align="center">Getting started</h1>
-<h2 align="center">pre-requisite:</h2>
-<h4>when writing handlers, do make sure your using the custom Request struct instead of http.Request, which is grouter.Request</h4>
+
+<h1 align="center">instillation</h1>
+
+```
+go get github.com/72sevenzy2/grouter/grouter
+```
+
 <br>
 <h1 align="center">General usage:</h1>
 

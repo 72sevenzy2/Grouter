@@ -43,7 +43,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/72sevenzy2/Grouter/grouter"
+	"github.com/72sevenzy2/grouter/grouter"
 )
 
 func main() {
@@ -70,7 +70,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/72sevenzy2/Grouter/grouter"
+	"github.com/72sevenzy2/grouter/grouter"
 )
 
 func main() {
@@ -102,7 +102,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/72sevenzy2/Grouter/grouter"
+	"github.com/72sevenzy2/grouter/grouter"
 )
 
 func main() {
@@ -135,7 +135,7 @@ package main
 import (
 	"net/http"
 
-	"github.com/72sevenzy2/Grouter/grouter"
+	"github.com/72sevenzy2/grouter/grouter"
 )
 
 func main() {
@@ -179,7 +179,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/72sevenzy2/Grouter/grouter"
+	"github.com/72sevenzy2/grouter/grouter"
 )
 
 func main() {
@@ -219,7 +219,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/72sevenzy2/Grouter/grouter"
+	"github.com/72sevenzy2/grouter/grouter"
 )
 
 func main() {

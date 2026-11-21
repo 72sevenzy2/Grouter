@@ -1,7 +1,6 @@
 package grouter
 
 import (
-	"net/http"
 	"strings"
 
 	"github.com/72sevenzy2/grouter/core"
@@ -55,7 +54,7 @@ func (g *Group) Group(prefix string) *Group {
 // Handler func for grouped routes (for method-specific handlers in group_handlers.go)
 func (g *Group) Handle(method, path string, handler core.HandlerFunc, mws ...core.Middleware) {
 	if !IsValidHTTPMethod(method) {
-		method = http.MethodGet // default to GET if invalid method.
+		panic("invalid http method.")
 	}
 	normalisedpath := strings.TrimRight(path, "/")
 	newPath := Join(g.prefix, normalisedpath) // path included as child route with parent route.

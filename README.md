@@ -19,10 +19,20 @@
  	Arch: amd64
  	Frequency: 10 reps for both grouter and mux.
 	```
+
+
+
+<h2 align="center">pre-requisite:</h2>
+<h3 align="center">when writing handlers, do make sure your using grouter's request struct instead of http.Request, which is grouter.Request</h3>
 <br>
 <h1 align="center">Getting started</h1>
-<h2 align="center">pre-requisite:</h2>
-<h4>when writing handlers, do make sure your using the custom Request struct instead of http.Request, which is grouter.Request</h4>
+
+<h1 align="center">instillation</h1>
+
+```
+go get github.com/72sevenzy2/grouter/grouter
+```
+
 <br>
 <h1 align="center">General usage:</h1>
 
@@ -33,7 +43,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/72sevenzy2/Grouter/grouter"
+	"github.com/72sevenzy2/grouter/grouter"
 )
 
 func main() {
@@ -60,7 +70,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/72sevenzy2/Grouter/grouter"
+	"github.com/72sevenzy2/grouter/grouter"
 )
 
 func main() {
@@ -92,7 +102,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/72sevenzy2/Grouter/grouter"
+	"github.com/72sevenzy2/grouter/grouter"
 )
 
 func main() {
@@ -125,7 +135,7 @@ package main
 import (
 	"net/http"
 
-	"github.com/72sevenzy2/Grouter/grouter"
+	"github.com/72sevenzy2/grouter/grouter"
 )
 
 func main() {
@@ -159,46 +169,6 @@ func main() {
 ```
 
 <br>
-<h2 align="center" style.Background="gray">Middleware(s) usage:</h2>
-
-```
-
-package main
-
-import (
-	"fmt"
-	"net/http"
-
-	"github.com/72sevenzy2/Grouter/grouter"
-)
-
-func main() {
-	r := grouter.NewGrouter()
-
-	limiter := grouter.NewLimiter(100, 1) // NewLimiter() takes in a maximum number of requests, and how often each token is refilled for      // the client.
-
-	r.Use(limiter.RateLimiter())
-	
-	r.Use(grouter.Recoverer()) // recoverer middleware always goes first, prevents server crashes when a bug has occured.
-	r.Use(grouter.Logger(0)) // standard logging, in which param 0 indicates default body size logging.
-
-	r.Use(grouter.BearerAuth("secretKey")) // can be any token (which has to be a string),
-	r.Use(grouter.BasicAuth("user1", "password1234")) // parameters username and password need to be included when using.
-	r.Use(grouter.Timeout(time.Second * 10)) //  depending on how long you want the time limit on every request.
-
-	r.Get("/resp", func(w http.ResponseWriter, r *grouter.Request) {
-		w.Write([]byte("responded"))
-	})
-
-	fmt.Println("server running on port 8080")
-	if err := http.ListenAndServe(":8080", r); err != nil {
-		panic(err)
-	}
-}
-
-```
-^ Request body read from the logging middleware can be capped, the default size being 1KiB, but can be configured via passing in an limit in grouter.Logger(..), like such: "r.Use(grouter.Logger(1024 * 2)" (2 KiB cap), though be sure the limit passed in is of appropriate type (uint32).
-<br>
 
 <h2 align="center">lastly, to handle route-specific middleware:</h2>
 
@@ -209,7 +179,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/72sevenzy2/Grouter/grouter"
+	"github.com/72sevenzy2/grouter/grouter"
 )
 
 func main() {
@@ -226,3 +196,5 @@ func main() {
 }
 
 ```
+<br>
+<h2 align="center">for more info on proper middleware usage, see https://github.com/72sevenzy2/Grouter-middlewares/blob/main/README.md</h2>

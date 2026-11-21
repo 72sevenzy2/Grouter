@@ -143,9 +143,9 @@ func TestLoggerBody(t *testing.T) {
 func TestRateLimiter(t *testing.T) {
 	b := grouter.NewGrouter()
 
-	lim := grouter.NewLimiter(100, 1) // 100 requests cap, 1 token refill per second
+	lim := grouter.NewLimiter(100, 1) // 100 tokens cap, 1 token refill per second
 
-	b.Use(lim.RateLimiter())
+	b.Use(lim.RateLimiter(100)) // 100 requests cap
 
 	var recs int
 	var mu sync.Mutex

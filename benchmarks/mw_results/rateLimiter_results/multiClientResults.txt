@@ -1,26 +1,26 @@
 goos: windows
 goarch: amd64
-pkg: github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks/rateLimit_benchmarks
+pkg: github.com/72sevenzy2/grouter/benchmarks/mw_benchmarks/rateLimit_benchmarks
 cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
-BenchmarkRateLimit_multiClients-8   	 1745559	       687.3 ns/op	     151 B/op	       7 allocs/op
-BenchmarkRateLimit_multiClients-8   	 1754588	       703.6 ns/op	     151 B/op	       7 allocs/op
-BenchmarkRateLimit_multiClients-8   	 1310294	       897.9 ns/op	     150 B/op	       7 allocs/op
-BenchmarkRateLimit_multiClients-8   	 1243185	      1044 ns/op	     150 B/op	       7 allocs/op
-BenchmarkRateLimit_multiClients-8   	 1000000	      1345 ns/op	     150 B/op	       7 allocs/op
-BenchmarkRateLimit_multiClients-8   	 1000000	      1251 ns/op	     150 B/op	       7 allocs/op
-BenchmarkRateLimit_multiClients-8   	 1000000	      1369 ns/op	     150 B/op	       7 allocs/op
-BenchmarkRateLimit_multiClients-8   	 1000000	      1294 ns/op	     150 B/op	       7 allocs/op
-BenchmarkRateLimit_multiClients-8   	 1000000	      1242 ns/op	     150 B/op	       7 allocs/op
-BenchmarkRateLimit_multiClients-8   	 1000000	      1339 ns/op	     150 B/op	       7 allocs/op
-BenchmarkRateLimit_multiClients-8   	 1000000	      1196 ns/op	     150 B/op	       7 allocs/op
-BenchmarkRateLimit_multiClients-8   	 1000000	      1392 ns/op	     150 B/op	       7 allocs/op
-BenchmarkRateLimit_multiClients-8   	 1000000	      1232 ns/op	     150 B/op	       7 allocs/op
-BenchmarkRateLimit_multiClients-8   	 1000000	      1283 ns/op	     150 B/op	       7 allocs/op
-BenchmarkRateLimit_multiClients-8   	 1000000	      1322 ns/op	     150 B/op	       7 allocs/op
-BenchmarkRateLimit_multiClients-8   	  994797	      1263 ns/op	     150 B/op	       7 allocs/op
-BenchmarkRateLimit_multiClients-8   	 1000000	      1132 ns/op	     150 B/op	       7 allocs/op
-BenchmarkRateLimit_multiClients-8   	 1000000	      1276 ns/op	     150 B/op	       7 allocs/op
-BenchmarkRateLimit_multiClients-8   	 1000000	      1271 ns/op	     150 B/op	       7 allocs/op
-BenchmarkRateLimit_multiClients-8   	 1000000	      1229 ns/op	     150 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1000000	      1470 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1048974	      1316 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	  428799	      2358 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	  828620	      2155 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1000000	      2481 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	  558764	      1903 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1000000	      1928 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	  541551	      2147 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	 1000000	      2677 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	  411547	      2807 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	  380394	      3348 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	  337156	      3081 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	  404748	      2849 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	  384102	      2843 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	  423939	      3018 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	  434289	      2867 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	  347689	      3024 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	  448180	      2792 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	  435062	      2832 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_multiClients-8   	  430545	      2816 ns/op	     160 B/op	       7 allocs/op
 PASS
-ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks/rateLimit_benchmarks	26.993s
+ok  	github.com/72sevenzy2/grouter/benchmarks/mw_benchmarks/rateLimit_benchmarks	31.462s

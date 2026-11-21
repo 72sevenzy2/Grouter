@@ -10,8 +10,8 @@ import (
 
 func BenchmarkRateLimit_ReqsExceeded(b *testing.B) {
 	r := grouter.NewGrouter()
-	lim := grouter.NewLimiter(100, 1)
-	r.Use(lim.RateLimiter())
+	lim := grouter.NewLimiter(10, 1)
+	r.Use(lim.RateLimiter(100))
 
 	r.Get("test1", func(w http.ResponseWriter, r *grouter.Request) {
 		w.WriteHeader(http.StatusOK)

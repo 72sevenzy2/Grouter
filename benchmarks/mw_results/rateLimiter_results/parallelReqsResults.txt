@@ -1,26 +1,26 @@
 goos: windows
 goarch: amd64
-pkg: github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks/rateLimit_benchmarks
+pkg: github.com/72sevenzy2/grouter/benchmarks/mw_benchmarks/rateLimit_benchmarks
 cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
-BenchmarkRateLimit_parallelReqs-8   	 1918822	       619.5 ns/op	     152 B/op	       7 allocs/op
-BenchmarkRateLimit_parallelReqs-8   	 1887492	       667.9 ns/op	     152 B/op	       7 allocs/op
-BenchmarkRateLimit_parallelReqs-8   	 1767280	       744.8 ns/op	     152 B/op	       7 allocs/op
-BenchmarkRateLimit_parallelReqs-8   	 1570287	       831.0 ns/op	     152 B/op	       7 allocs/op
-BenchmarkRateLimit_parallelReqs-8   	 1465228	      1041 ns/op	     152 B/op	       7 allocs/op
-BenchmarkRateLimit_parallelReqs-8   	 1496192	       762.5 ns/op	     152 B/op	       7 allocs/op
-BenchmarkRateLimit_parallelReqs-8   	 1483332	       817.6 ns/op	     152 B/op	       7 allocs/op
-BenchmarkRateLimit_parallelReqs-8   	 1562774	       794.1 ns/op	     152 B/op	       7 allocs/op
-BenchmarkRateLimit_parallelReqs-8   	 1550270	       783.5 ns/op	     152 B/op	       7 allocs/op
-BenchmarkRateLimit_parallelReqs-8   	 1500786	       975.4 ns/op	     152 B/op	       7 allocs/op
-BenchmarkRateLimit_parallelReqs-8   	 1571137	       768.9 ns/op	     152 B/op	       7 allocs/op
-BenchmarkRateLimit_parallelReqs-8   	 1555675	       836.8 ns/op	     152 B/op	       7 allocs/op
-BenchmarkRateLimit_parallelReqs-8   	  888204	      1192 ns/op	     152 B/op	       7 allocs/op
-BenchmarkRateLimit_parallelReqs-8   	 1000000	      1326 ns/op	     152 B/op	       7 allocs/op
-BenchmarkRateLimit_parallelReqs-8   	 1096072	      1021 ns/op	     152 B/op	       7 allocs/op
-BenchmarkRateLimit_parallelReqs-8   	 1000000	      1356 ns/op	     152 B/op	       7 allocs/op
-BenchmarkRateLimit_parallelReqs-8   	  799402	      1284 ns/op	     152 B/op	       7 allocs/op
-BenchmarkRateLimit_parallelReqs-8   	 1436535	      1055 ns/op	     152 B/op	       7 allocs/op
-BenchmarkRateLimit_parallelReqs-8   	 1000000	      1238 ns/op	     152 B/op	       7 allocs/op
-BenchmarkRateLimit_parallelReqs-8   	  942055	      1203 ns/op	     152 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1368259	       948.6 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1319974	      1782 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	 1000000	      2011 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	  729748	      2158 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	  630364	      2533 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	  564793	      2446 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	  453640	      2533 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	  673903	      2417 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	  480874	      2508 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	  448797	      2469 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	  476935	      2485 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	  486772	      2418 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	  469740	      2482 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	  484803	      2558 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	  663602	      2617 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	  464674	      2668 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	  477610	      2674 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	  474686	      2675 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	  478669	      2482 ns/op	     160 B/op	       7 allocs/op
+BenchmarkRateLimit_parallelReqs-8   	  542506	      2365 ns/op	     160 B/op	       7 allocs/op
 PASS
-ok  	github.com/72sevenzy2/http-router/benchmarks/mw_benchmarks/rateLimit_benchmarks	36.042s
+ok  	github.com/72sevenzy2/grouter/benchmarks/mw_benchmarks/rateLimit_benchmarks	34.243s

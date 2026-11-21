@@ -12,7 +12,7 @@ func BenchmarkRateLimit_allowedReqs(b *testing.B) {
 	r := grouter.NewGrouter()
 	// massive maximum request limit for testing purposes.
 	lim := grouter.NewLimiter(1_000_000_000, 1)
-	r.Use(lim.RateLimiter())
+	r.Use(lim.RateLimiter(100))
 
 	r.Get("test1", func(w http.ResponseWriter, r *grouter.Request) {
 		w.WriteHeader(http.StatusOK)

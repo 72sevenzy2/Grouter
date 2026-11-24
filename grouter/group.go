@@ -6,11 +6,13 @@ import (
 	"github.com/72sevenzy2/grouter/core"
 )
 
+type Middleware = core.Middleware
+
 // group type (for route grouping)
 type Group struct {
 	router *Grouter
 	prefix string
-	mws    []core.Middleware
+	mws    []Middleware
 }
 
 // the router Group() method works such that when it is registered, child routes can also be registered using the parent route as it would be of type *Group, in which the child route would also inherit the parent routes middlewares.
@@ -36,13 +38,13 @@ func (r *Grouter) Group(p string, nests ...string) *Group {
 }
 
 // Group based middleware
-func (g *Group) Use(s core.Middleware) {
+func (g *Group) Use(s Middleware) {
 	g.mws = append(g.mws, s)
 }
 
 // group method for child routes
 func (g *Group) Group(prefix string) *Group {
-	cmws := append([]core.Middleware{}, g.mws...) // copy previous route nodes mw collection (each childing having their own mw slice to do so)
+	cmws := append([]Middleware{}, g.mws...) // copy previous route nodes mw collection (each childing having their own mw slice to do so)
 
 	return &Group{
 		router: g.router,
@@ -52,15 +54,15 @@ func (g *Group) Group(prefix string) *Group {
 }
 
 // Handler func for grouped routes (for method-specific handlers in group_handlers.go)
-func (g *Group) Handle(method, path string, handler core.HandlerFunc, mws ...core.Middleware) {
+func (g *Group) Handle(method, path string, handler core.HandlerFunc, mws ...Middleware) {
 	if !IsValidHTTPMethod(method) {
 		panic("invalid http method.")
 	}
 	normalisedpath := strings.TrimRight(path, "/")
 	newPath := Join(g.prefix, normalisedpath) // path included as child route with parent route.
 
-	mw := append([]core.Middleware{}, g.mws...) // appending empty Middleware slice, and storing g.mws  (group based middleware)
-	mw = append(mw, mws...)                     // appending route specific middleware
+	mw := append([]Middleware{}, g.mws...) // appending empty Middleware slice, and storing g.mws  (group based middleware)
+	mw = append(mw, mws...)                // appending route specific middleware
 
 	g.router.Handle(method, newPath, handler, mw...)
 }
